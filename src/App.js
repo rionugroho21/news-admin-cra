@@ -1,28 +1,20 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Main from './component/Main';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
-}
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import * as actions from './redux/actions';
+import {withRouter} from 'react-router';
+
+const mapStateToProps = (state) => {
+  return {
+    datas: state.datas
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators(actions, dispatch);
+};
+
+const App = withRouter(connect(mapStateToProps, mapDispatchToProps)(Main));
 
 export default App;
