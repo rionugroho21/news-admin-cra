@@ -1,5 +1,6 @@
 import React from 'react';
 import imgPropic from '../assets/img/admin.jpg';
+import {Link} from 'react-router-dom';
 
 function Header() {
     return <header id="header" class="header">
@@ -14,8 +15,8 @@ function Header() {
                                 <button class="search-close" type="submit"><i class="fa fa-close"></i></button>
                             </form>
                         </div>
-                        <div class="dropdown">
-                            <button class="search-trigger" id=""><i class="fa fa-plus"></i></button>
+                        <div class="add">
+                            <Link class="add-trigger" to="/Add"><i class="fa fa-plus"></i></Link>
                         </div>
                     </div>
                 </div>

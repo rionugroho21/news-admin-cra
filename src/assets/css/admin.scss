@@ -1340,6 +1340,21 @@ header.fixed-top {
   width: 43px;
   line-height: 38px; }
 
+.header-left .add {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.add-trigger {
+  background: transparent;
+  border: none;
+  color: #272c33;
+  cursor: pointer;
+  font-size: 16px;
+  height: 41px;
+  width: 43px;
+  line-height: 38px; }
+
 header .form-inline {
   background: #263238;
   display: none;

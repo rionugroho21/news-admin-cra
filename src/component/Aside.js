@@ -18,13 +18,6 @@ function Aside() {
                         <li>
                             <Link to="/"><i class="menu-icon fa fa-dashboard"></i>Dashboard </Link>
                         </li>
-                        <h3 class="menu-title">UI elements</h3>
-                        <li class="menu-item-has-children active dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-dashboard"></i>Dashboard</a>
-                            <ul class="sub-menu children dropdown-menu">
-                                <li><i class="menu-icon fa fa-th"></i><Link to="/">Basic Form</Link></li>
-                            </ul>
-                        </li>
                     </ul>
                 </div>
             </nav>

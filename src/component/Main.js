@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
+import {Route, Link} from 'react-router-dom';
 
 import Content from './Content';
 import Aside from './Aside';
 import Header from './Header';
+import Edit from './Edit';
+import {Add} from './Add';
 
 class Main extends Component {
 
@@ -33,7 +36,17 @@ class Main extends Component {
                             </div>
                         </div>
                     </div>
-                    <Content {...this.props} />
+                    <div class="content mt-3">
+                        <Route exact path="/" render={() => (
+                            <Content {...this.props} />
+                        )}/>
+                        <Route exact path="/Add" render={({history}) => (
+                            <Add {...this.props} onHistory={history}/>
+                        )}/>
+                        <Route path="/Edit/:id" render = {(params) => (
+                            <Edit {...this.props} {...params}/>
+                        )}/>
+                    </div>
                 </div>
             </div>
         );
