@@ -48,18 +48,11 @@ export class Add extends React.Component {
                             <label for="nf-content" class=" form-control-label">Content</label>
                             <input type="text" id="nf-content" name="content" placeholder="" class="form-control" />
                         </div>
-                        {/* <div class="card-footer"> */}
-                            <button type="submit" class="btn btn-primary btn-sm">
-                                <i class="fa fa-dot-circle-o"></i> Tambah
-                            </button>
-                        {/* </div> */}
+                        <button type="submit" class="btn btn-primary btn-sm">
+                            <i class="fa fa-dot-circle-o"></i> Tambah
+                        </button>
                     </form>
                 </div>
-                {/* <div class="card-footer">
-                    <button type="submit" class="btn btn-primary btn-sm" onSubmit={this.handleSubmit}>
-                        <i class="fa fa-dot-circle-o"></i> Tambah
-                    </button>
-                </div> */}
             </div>
         </div>
     }

@@ -24,6 +24,20 @@ export function startAddingPost(post) {
     } 
 }
 
+export function startEditingDatas(post) {
+    return (dispatch) => {
+        return database.ref(`datas`).update({[post.id]: post}).then((snapshot) => {
+            let post = [];
+            snapshot.forEach((childSnapshot) => {
+                post.push(childSnapshot.val());
+            });
+            dispatch(editPost(post));
+        }).catch((error) => {
+            console.log(error);
+        });
+    }
+}
+
 export function startRemovingDatas(index, id) {
     return (dispatch) => {
         return database.ref(`datas/${id}`).remove().then(() => {
