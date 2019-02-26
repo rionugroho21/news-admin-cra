@@ -10,8 +10,13 @@ function Item(props) {
                     <strong>Id :</strong> {post.id}
                 </div>
                 <div class="card-body card-block">
-                    <form action="" method="post" class="">
-                    <div class="row form-group">
+                    <form>
+                        <div class="row form-group">
+                            <div class="col-md-6 offset-md-3">
+                                <img src={post.imageLink} />
+                            </div>
+                        </div>
+                        <div class="row form-group">
                             <div class="col col-md-3"><label class=" form-control-label">Image</label></div>
                             <div class="col-12 col-md-9">
                                 <p class="form-control-static">{post.imageLink}</p>
