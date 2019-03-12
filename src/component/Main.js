@@ -21,10 +21,10 @@ class Main extends Component {
         return (
             <div>
                 <Aside />
-                <div id="right-panel" class="right-panel">
+                <div id="right-panel" className="right-panel">
                     <Header />
                     <Breadcrumbs />
-                    <div class="content mt-3">
+                    <div className="content mt-3">
                         <Route exact path="/" render={() => (
                             <Content {...this.props} />
                         )}/>

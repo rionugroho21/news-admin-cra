@@ -3,31 +3,31 @@ import imgPropic from '../assets/img/admin.jpg';
 import {Link} from 'react-router-dom';
 
 function Header() {
-    return <header id="header" class="header">
-            <div class="header-menu">
-                <div class="col-sm-7">
-                    <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>
-                    <div class="header-left">
-                        <button class="search-trigger"><i class="fa fa-search"></i></button>
-                        <div class="form-inline">
-                            <form class="search-form">
-                                <input class="form-control mr-sm-2" type="text" placeholder="Search ..." aria-label="Search" />
-                                <button class="search-close" type="submit"><i class="fa fa-close"></i></button>
+    return <header id="header" className="header">
+            <div className="header-menu">
+                <div className="col-sm-7">
+                    <a id="menuToggle" className="menutoggle pull-left"><i className="fa fa fa-tasks"></i></a>
+                    <div className="header-left">
+                        <button className="search-trigger"><i className="fa fa-search"></i></button>
+                        <div className="form-inline">
+                            <form className="search-form">
+                                <input className="form-control mr-sm-2" type="text" placeholder="Search ..." aria-label="Search" />
+                                <button className="search-close" type="submit"><i className="fa fa-close"></i></button>
                             </form>
                         </div>
-                        <div class="add">
-                            <Link class="add-trigger" to="/Add"><i class="fa fa-plus"></i></Link>
+                        <div className="add">
+                            <Link className="add-trigger" to="/Add"><i className="fa fa-plus"></i></Link>
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-5">
-                    <div class="user-area dropdown float-right">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="user-avatar rounded-circle" src={imgPropic} alt="User Avatar" />
+                <div className="col-sm-5">
+                    <div className="user-area dropdown float-right">
+                        <a href="#" className="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img className="user-avatar rounded-circle" src={imgPropic} alt="User Avatar" />
                         </a>
-                        <div class="user-menu dropdown-menu">
-                            <a class="nav-link" href="#"><i class="fa fa-user"></i> My Profile</a>
-                            <a class="nav-link" href="#"><i class="fa fa-power-off"></i> Logout</a>
+                        <div className="user-menu dropdown-menu">
+                            <a className="nav-link" href="#"><i className="fa fa-user"></i> My Profile</a>
+                            <a className="nav-link" href="#"><i className="fa fa-power-off"></i> Logout</a>
                         </div>
                     </div>
                 </div>

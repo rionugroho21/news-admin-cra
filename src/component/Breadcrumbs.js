@@ -1,18 +1,18 @@
 import React from 'react';
 
 function Breadcrumbs() {
-    return <div class="breadcrumbs">
-            <div class="col-sm-4">
-                <div class="page-header float-left">
-                    <div class="page-title"><h1>Dashboard</h1></div>
+    return <div className="breadcrumbs">
+            <div className="col-sm-4">
+                <div className="page-header float-left">
+                    <div className="page-title"><h1>Dashboard</h1></div>
                 </div>
             </div>
-            <div class="col-sm-8">
-                <div class="page-header float-right">
-                    <div class="page-title">
-                        <ol class="breadcrumb text-right">
-                            <li><a href="#">Dashboard</a></li>
-                            <li class="active">Data</li>
+            <div className="col-sm-8">
+                <div className="page-header float-right">
+                    <div className="page-title">
+                        <ol className="breadcrumb text-right">
+                            <li><a>Dashboard</a></li>
+                            <li className="active">Data</li>
                         </ol>
                     </div>
                 </div>

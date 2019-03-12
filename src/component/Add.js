@@ -25,31 +25,31 @@ export class Add extends React.Component {
     }
 
     render(){
-        return <div class="col-lg-4">
-            <div class="card">
-                <div class="card-header">
+        return <div className="col-lg-4">
+            <div className="card">
+                <div className="card-header">
                     <strong>Tambahkan </strong>Data
                 </div>
-                <div class="card-body card-block">
+                <div className="card-body card-block">
                     <form onSubmit={this.handleSubmit}>
-                        <div class="form-group">
-                            <label for="nf-image" class=" form-control-label">Image</label>
-                            <input type="text" id="nf-image" name="link" placeholder="" class="form-control" />
+                        <div className="form-group">
+                            <label htmlFor="nf-image" className="form-control-label">Image</label>
+                            <input type="text" id="nf-image" name="link" placeholder="" className="form-control" />
                         </div>
-                        <div class="form-group">
-                            <label for="nf-title" class=" form-control-label">Title</label>
-                            <input type="text" id="nf-title" name="title" placeholder="" class="form-control" />
+                        <div className="form-group">
+                            <label htmlFor="nf-title" className="form-control-label">Title</label>
+                            <input type="text" id="nf-title" name="title" placeholder="" className="form-control" />
                         </div>
-                        <div class="form-group">
-                            <label for="nf-cat" class=" form-control-label">Category</label>
-                            <input type="text" id="nf-cat" name="category" placeholder="" class="form-control" />
+                        <div className="form-group">
+                            <label htmlFor="nf-cat" className="form-control-label">Category</label>
+                            <input type="text" id="nf-cat" name="category" placeholder="" className="form-control" />
                         </div>
-                        <div class="form-group">
-                            <label for="nf-content" class=" form-control-label">Content</label>
-                            <input type="text" id="nf-content" name="content" placeholder="" class="form-control" />
+                        <div className="form-group">
+                            <label htmlFor="nf-content" className="form-control-label">Content</label>
+                            <input type="text" id="nf-content" name="content" placeholder="" className="form-control" />
                         </div>
-                        <button type="submit" class="btn btn-primary btn-sm">
-                            <i class="fa fa-dot-circle-o"></i> Tambah
+                        <button type="submit" className="btn btn-primary btn-sm">
+                            <i className="fa fa-dot-circle-o"></i> Tambah
                         </button>
                     </form>
                 </div>
