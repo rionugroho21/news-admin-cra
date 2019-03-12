@@ -47,9 +47,11 @@ function Item(props) {
                         <i class="fa fa-dot-circle-o"></i> Edit
                     </Link>
                     <button onClick = {() => {
+                        if (window.confirm('Are you sure you wish to delete this item?'))
                         props.startRemovingDatas(props.index, post.id);
                         props.history.push('/');
-                    }}type="reset" class="btn btn-danger btn-sm">
+                    }}
+                    type="reset" class="btn btn-danger btn-sm">
                         <i class="fa fa-ban"></i> Delete
                     </button>
                 </div>
