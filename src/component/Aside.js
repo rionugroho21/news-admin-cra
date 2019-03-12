@@ -3,8 +3,9 @@ import {Link} from 'react-router-dom';
 import imgLogo from '../assets/img/logo.png';
 import imgLogo2 from '../assets/img/logo2.png';
 
-function Aside() {
-    return <aside id="left-panel" className="left-panel">
+class Aside extends React.Component {
+    render(){
+        return <aside id="left-panel" className="left-panel">
             <nav className="navbar navbar-expand-sm navbar-default">
                 <div className="navbar-header">
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,6 +23,7 @@ function Aside() {
                 </div>
             </nav>
         </aside>
+    }
 }
 
 export default Aside;

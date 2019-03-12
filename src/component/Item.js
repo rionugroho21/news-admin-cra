@@ -1,10 +1,33 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import PropTypes from 'prop-types';
+import { confirmAlert } from 'react-confirm-alert';
+import 'react-confirm-alert/src/react-confirm-alert.css'
 
-function Item(props) {
-    const post = props.post;
-    return <div className="col-lg-4" key={post.id}>
+class Item extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    submit = (index, id) => {
+        confirmAlert({
+          title: 'Confirm to delete',
+          message: 'Are you sure you wish to delete this item?',
+          buttons: [
+            {
+                label: 'Yes',
+                onClick: () => this.props.startRemovingDatas(index, id)
+            },
+            {
+                label: 'No',
+                onClick: () => false
+            }
+          ]
+        })
+    };
+
+    render(){
+        const post = this.props.post;
+        return <div className="col-lg-4" key={post.id}>
             <div className="card">
                 <div className="card-header">
                     <strong>Id :</strong> {post.id}
@@ -47,10 +70,7 @@ function Item(props) {
                         <i className="fa fa-dot-circle-o"></i> Edit
                     </Link>
                     <button onClick = {() => {
-                        console.log(props.index, post.id);
-                        if (window.confirm('Are you sure you wish to delete this item?'))
-                        props.startRemovingDatas(props.index, post.id);
-                        props.history.push('/');
+                        this.submit(this.props.index, post.id);
                     }}
                     type="reset" className="btn btn-danger btn-sm">
                         <i className="fa fa-ban"></i> Delete
@@ -58,10 +78,7 @@ function Item(props) {
                 </div>
             </div>
         </div>
-}
-
-Item.propTypes = {
-    post: PropTypes.object.isRequired,
+    }
 }
 
 export default Item;

@@ -2,8 +2,9 @@ import React from 'react';
 import imgPropic from '../assets/img/admin.jpg';
 import {Link} from 'react-router-dom';
 
-function Header() {
-    return <header id="header" className="header">
+class Header extends React.Component {
+    render(){
+        return <header id="header" className="header">
             <div className="header-menu">
                 <div className="col-sm-7">
                     <a id="menuToggle" className="menutoggle pull-left"><i className="fa fa fa-tasks"></i></a>
@@ -33,6 +34,7 @@ function Header() {
                 </div>
             </div>
         </header>
+    }
 }
 
 export default Header;

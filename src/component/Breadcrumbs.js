@@ -1,7 +1,8 @@
 import React from 'react';
 
-function Breadcrumbs() {
-    return <div className="breadcrumbs">
+class Breadcrumbs extends React.Component {
+    render(){
+        return <div className="breadcrumbs">
             <div className="col-sm-4">
                 <div className="page-header float-left">
                     <div className="page-title"><h1>Dashboard</h1></div>
@@ -18,6 +19,7 @@ function Breadcrumbs() {
                 </div>
             </div>
         </div>
+    }
 }
 
 export default Breadcrumbs;
