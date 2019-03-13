@@ -15,6 +15,7 @@ class Main extends Component {
         this.props.startLoadingPost().then(() => {
             this.setState({loading: false});
         });
+        this.props.startLoadingCat();
     }
 
     render() {
@@ -26,7 +27,7 @@ class Main extends Component {
                     <Breadcrumbs />
                     <div className="content mt-3">
                         <Route exact path="/" render={() => (
-                            <Content {...this.props} />
+                            <Content loading={this.state.loading} {...this.props} />
                         )}/>
                         <Route path="/Add" render={({history}) => (
                             <Add {...this.props} onHistory={history}/>

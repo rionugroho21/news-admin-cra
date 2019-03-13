@@ -11,8 +11,6 @@ class Item extends React.Component {
         this.state = {
             showPopup: false
         };
-        //this.showPopup = this.showPopup.bind(this);
-        //this.submit = this.submit.bind(this);
     }
 
     submit = (index, id) => {

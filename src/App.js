@@ -7,7 +7,8 @@ import {withRouter} from 'react-router';
 
 const mapStateToProps = (state) => {
   return {
-    datas: state.datas
+    datas: state.datas,
+    category: state.category
   };
 };
 

@@ -11,6 +11,13 @@ function datas(state = _datas, action) {
     }
 }
 
-const rootReducer = combineReducers({datas});
+function category(state = _datas, action) {
+    switch (action.type) {
+        case 'LOAD_CATEGORY': return action.data;
+        default: return state;
+    }
+}
+
+const rootReducer = combineReducers({datas, category});
 
 export default rootReducer;
