@@ -1,11 +1,18 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import { confirmAlert } from 'react-confirm-alert';
-import 'react-confirm-alert/src/react-confirm-alert.css'
+import 'react-confirm-alert/src/react-confirm-alert.css';
+
+import Popup from './Popup';
 
 class Item extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            showPopup: false
+        };
+        //this.showPopup = this.showPopup.bind(this);
+        //this.submit = this.submit.bind(this);
     }
 
     submit = (index, id) => {
@@ -23,7 +30,13 @@ class Item extends React.Component {
             }
           ]
         })
-    };
+    }
+
+    togglePopup = () => {
+        this.setState({
+          showPopup: !this.state.showPopup
+        });
+    }
 
     render(){
         const post = this.props.post;
@@ -35,8 +48,15 @@ class Item extends React.Component {
                 <div className="card-body card-block">
                     <form>
                         <div className="row form-group">
-                            <div className="col-md-6 offset-md-3">
+                            <div className="col-md-6 offset-md-3" onClick={this.togglePopup}>
                                 <img src={post.imageLink} />
+                                {this.state.showPopup ? 
+                                <Popup
+                                    imgSrc={post.imageLink}
+                                    closePopup={this.togglePopup}
+                                />
+                                : null
+                                }
                             </div>
                         </div>
                         <div className="row form-group">
