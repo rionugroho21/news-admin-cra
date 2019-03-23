@@ -56,6 +56,22 @@
     background-color: #d7d7d7 !important;
 }
 
+.form-control-label{
+    display: block;
+}
+
+.checkbox-inline,
+.radio-inline{
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.checkbox-inline > input,
+.radio-inline > input{
+    vertical-align: top;
+    margin-top: 6px;
+}
+
 .option-category{
     display: block;
     width: 100%;
@@ -71,4 +87,9 @@
     border-radius: .25rem;
     -webkit-transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    cursor: pointer;
+}
+
+.mgl10{
+    margin-left: 10px;
 }

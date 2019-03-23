@@ -7,6 +7,7 @@ import './assets/css/style.scss';
 import './assets/css/admin.scss';
 import './assets/js/main.js';
 import '../node_modules/bootstrap/dist/js/bootstrap.min.js';
+import $ from 'jquery';
 
 import App from './App';
 import {BrowserRouter} from 'react-router-dom';

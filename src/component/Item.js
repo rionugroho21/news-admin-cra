@@ -9,7 +9,7 @@ class Item extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            showPopup: false
+            showPopup: false,
         };
     }
 
@@ -38,6 +38,8 @@ class Item extends React.Component {
 
     render(){
         const post = this.props.post;
+        var CDate = new Date(post.date);
+        
         return <div className="col-lg-4" key={post.id}>
             <div className="card">
                 <div className="card-header">
@@ -70,9 +72,27 @@ class Item extends React.Component {
                             </div>
                         </div>
                         <div className="row form-group">
+                            <div className="col col-md-3"><label className=" form-control-label">Date</label></div>
+                            <div className="col-12 col-md-9">
+                                <p className="form-control-static">{CDate.toString()}</p>
+                            </div>
+                        </div>
+                        <div className="row form-group">
                             <div className="col col-md-3"><label className=" form-control-label">Category</label></div>
                             <div className="col-12 col-md-9">
                                 <p className="form-control-static">{post.category}</p>
+                            </div>
+                        </div>
+                        <div className="row form-group">
+                            <div className="col col-md-3"><label className=" form-control-label">Akses</label></div>
+                            <div className="col-12 col-md-9">
+                                <p className="form-control-static">{post.akses.toString()}</p>
+                            </div>
+                        </div>
+                        <div className="row form-group">
+                            <div className="col col-md-3"><label className=" form-control-label">Writer</label></div>
+                            <div className="col-12 col-md-9">
+                                <p className="form-control-static">{post.writer}</p>
                             </div>
                         </div>
                         <div className="row form-group">
