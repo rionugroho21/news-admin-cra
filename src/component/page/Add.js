@@ -1,7 +1,7 @@
 import React from 'react';
-import Option from './Option';
+import Option from '../common/Option';
 import DatePicker from "react-datepicker";
-import "../../node_modules/react-datepicker/dist/react-datepicker.css";
+import "../../../node_modules/react-datepicker/dist/react-datepicker.css";
 
 export class Add extends React.Component {
     constructor(){

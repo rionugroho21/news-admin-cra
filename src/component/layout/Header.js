@@ -1,5 +1,5 @@
 import React from 'react';
-import imgPropic from '../assets/img/admin.jpg';
+import imgPropic from '../../assets/img/admin.jpg';
 import {Link} from 'react-router-dom';
 
 class Header extends React.Component {

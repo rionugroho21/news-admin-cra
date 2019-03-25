@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css';
 
-import Popup from './Popup';
+import Popup from '../common/Popup';
 
 class Item extends React.Component {
     constructor(props) {

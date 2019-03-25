@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
 import {Route} from 'react-router-dom';
+import $ from 'jquery';
 
-import Content from './Content';
-import Aside from './Aside';
-import Header from './Header';
-import Breadcrumbs from './Breadcrumbs';
-import Edit from './Edit';
-import {Add} from './Add';
+import Content from './page/Content';
+import Aside from './layout/Aside';
+import Header from './layout/Header';
+import Breadcrumbs from './layout/Breadcrumbs';
+import Edit from './page/Edit';
+import {Add} from './page/Add';
 
 class Main extends Component {
-    state = { loading: true }
+    state = { 
+        loading: true
+    }
 
     componentDidMount() {
         this.props.startLoadingPost().then(() => {

@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import imgLogo from '../assets/img/logo.png';
-import imgLogo2 from '../assets/img/logo2.png';
+import imgLogo from '../../assets/img/logo.png';
+import imgLogo2 from '../../assets/img/logo2.png';
 
 class Aside extends React.Component {
     render(){
