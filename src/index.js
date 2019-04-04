@@ -9,23 +9,11 @@ import './assets/js/main.js';
 import '../node_modules/bootstrap/dist/js/bootstrap.min.js';
 
 import App from './App';
+import store from './store';
 import {BrowserRouter} from 'react-router-dom';
-import {createStore, applyMiddleware, compose} from 'redux';
 import {Provider} from 'react-redux';
-import rootReducer from './redux/reducers';
-import thunk from 'redux-thunk';
-import * as serviceWorker from './serviceWorker';
 
-const initialState = {};
-const middleware = [thunk];
-const store = createStore(
-    rootReducer, 
-    initialState, 
-    compose(
-        applyMiddleware(...middleware),
-        window.__REDUX_DEVTOOLS_EXTENSION__ ? window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() : compose
-    )
-);
+import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
     <Provider store={store}>
