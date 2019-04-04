@@ -1,4 +1,5 @@
 import {database} from '../database/config';
+import {LOAD_DATAS, LOAD_CATEGORY, ADD_POST, EDIT_POST, REMOVE_POST} from './types';
 
 export function startLoadingPost() {
     return (dispatch) => {
@@ -64,35 +65,35 @@ export function startRemovingDatas(index, id) {
 
 export function loadDatas(datas) {
     return {
-        type: 'LOAD_DATAS',
+        type: LOAD_DATAS,
         datas
     }
 }
 
 export function loadCategory(data) {
     return {
-        type: 'LOAD_CATEGORY',
+        type: LOAD_CATEGORY,
         data
     }
 }
 
 export function addPost(post) {
     return {
-        type: 'ADD_POST',
+        type: ADD_POST,
         post
     }
 }
 
 export function editPost(post) {
     return {
-        type: 'EDIT_POST',
+        type: EDIT_POST,
         post
     }
 }
 
 export function removePost(index) {
     return {
-        type: 'REMOVE_POST',
+        type: REMOVE_POST,
         index
     }
 }

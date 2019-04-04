@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Route} from 'react-router-dom';
+import {Switch, Route} from 'react-router-dom';
 import $ from 'jquery';
 
 import Content from './page/Content';
@@ -29,6 +29,7 @@ class Main extends Component {
                     <Header />
                     <Breadcrumbs />
                     <div className="content mt-3">
+                    <Switch>
                         <Route exact path="/" render={() => (
                             <Content loading={this.state.loading} {...this.props} />
                         )}/>
@@ -38,6 +39,8 @@ class Main extends Component {
                         <Route path="/Edit/:id" render = {(params) => (
                             <Edit {...this.props} {...params}/>
                         )}/>
+                        <Route render = {() => <h1>Page not found</h1>} />
+                    </Switch>
                     </div>
                 </div>
             </div>

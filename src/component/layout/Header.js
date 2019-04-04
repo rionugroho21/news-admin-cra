@@ -17,8 +17,9 @@ class Header extends React.Component {
                             </form>
                         </div>
                         <div className="add">
-                            <Link className="add-trigger" to="/Add"><i className="fa fa-plus"></i></Link>
+                            <Link className="add-trigger" to="/add"><i className="fa fa-plus"></i></Link>
                         </div>
+                        <Link className="mgl25" to="/view">Visit Web</Link>
                     </div>
                 </div>
                 <div className="col-sm-5">
