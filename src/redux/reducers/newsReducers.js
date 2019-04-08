@@ -1,6 +1,5 @@
-import _datas from '../data/datas';
-import {combineReducers} from 'redux';
-import {LOAD_DATAS, LOAD_CATEGORY, ADD_POST, EDIT_POST, REMOVE_POST} from './types';
+import _datas from '../../data/datas';
+import {LOAD_DATAS, ADD_POST, EDIT_POST, REMOVE_POST} from '../types';
 
 function datas(state = _datas, action) {
     switch (action.type) {
@@ -16,13 +15,4 @@ function datas(state = _datas, action) {
     }
 }
 
-function category(state = _datas, action) {
-    switch (action.type) {
-        case LOAD_CATEGORY: return action.data;
-        default: return state;
-    }
-}
-
-const rootReducer = combineReducers({datas, category});
-
-export default rootReducer;
+export default datas;

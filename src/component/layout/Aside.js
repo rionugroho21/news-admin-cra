@@ -18,6 +18,8 @@ class Aside extends React.Component {
                     <ul className="nav navbar-nav">
                         <li>
                             <Link to="/"><i className="menu-icon fa fa-dashboard"></i>Dashboard </Link>
+                            <Link to="/news"><i className="menu-icon fa fa-newspaper-o"></i>News </Link>
+                            <Link to="/member"><i className="menu-icon fa fa-user-circle"></i>Member </Link>
                         </li>
                     </ul>
                 </div>

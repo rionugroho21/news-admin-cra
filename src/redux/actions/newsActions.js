@@ -1,7 +1,7 @@
-import {database} from '../database/config';
-import {LOAD_DATAS, LOAD_CATEGORY, ADD_POST, EDIT_POST, REMOVE_POST} from './types';
+import {database} from '../../database/config';
+import {LOAD_DATAS, ADD_POST, EDIT_POST, REMOVE_POST} from '../types';
 
-export function startLoadingPost() {
+export function startLoadingNews() {
     return (dispatch) => {
         return database.ref('datas').once('value').then((snapshot) => {
             let datas = [];
@@ -15,21 +15,7 @@ export function startLoadingPost() {
     }
 }
 
-export function startLoadingCat() {
-    return (dispatch) => {
-        return database.ref('category').once('value').then((snapshot) => {
-            let datas = [];
-            snapshot.forEach((childSnapshot) => {
-                datas.push(childSnapshot.val());
-            });
-            dispatch(loadCategory(datas));
-        }).catch((error) => {
-            console.log(error);
-        });
-    }
-}
-
-export function startAddingPost(post) {
+export function startAddingNews(post) {
     return (dispatch) => {
         return database.ref('datas').update({[post.id]: post}).then(() => {
             dispatch(addPost(post));
@@ -39,7 +25,7 @@ export function startAddingPost(post) {
     } 
 }
 
-export function startEditingDatas(post) {
+export function startEditingNews(post) {
     return (dispatch) => {
         return database.ref(`datas`).update({[post.id]: post}).then((snapshot) => {
             let post = [];
@@ -53,7 +39,7 @@ export function startEditingDatas(post) {
     }
 }
 
-export function startRemovingDatas(index, id) {
+export function startRemovingNews(index, id) {
     return (dispatch) => {
         return database.ref(`datas/${id}`).remove().then(() => {
             dispatch(removePost(index));
@@ -67,13 +53,6 @@ export function loadDatas(datas) {
     return {
         type: LOAD_DATAS,
         datas
-    }
-}
-
-export function loadCategory(data) {
-    return {
-        type: LOAD_CATEGORY,
-        data
     }
 }
 

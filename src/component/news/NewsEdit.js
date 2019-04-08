@@ -1,13 +1,18 @@
 import React from 'react';
 import Option from '../common/Option';
 import DatePicker from "react-datepicker";
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import {bindActionCreators} from 'redux';
 import "../../../node_modules/react-datepicker/dist/react-datepicker.css";
+import {startEditingNews, startLoadingNews} from '../../redux/actions/newsActions';
+import {startLoadingCat} from '../../redux/actions/categoryActions';
 
-class Edit extends React.Component {
+class NewsEdit extends React.Component {
     constructor(props){
         super(props);
-        const {match, datas} = this.props;
-        const id = Number(match.params.id);
+        const datas = this.props.datas;
+        const id = Number(this.props.match.params.id);
         const post = datas.find((post) => post.id === id);
         this.state = {
             id: post.id,
@@ -18,11 +23,19 @@ class Edit extends React.Component {
             akses: post.akses,
             writer: post.writer,
             content: post.content,
-            checked: true
+            checked: true,
+            errors: {}
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handlechange = this.handlechange.bind(this);
         this.handleDate = this.handleDate.bind(this);
+    }
+
+    componentDidMount(){
+        this.props.startLoadingNews();
+        this.props.startLoadingCat();
+        this.checkAkses();
+        this.checkDate();
     }
 
     handleSubmit(event) {
@@ -43,9 +56,10 @@ class Edit extends React.Component {
             writer: this.state.writer,
             content: this.state.content
         }
-        this.props.startEditingDatas(post);
-        this.props.startLoadingPost();
-        this.props.history.push('/');
+        if(this.validateForm(post)){
+            this.props.startEditingNews(post);
+            this.props.history.push('/news');
+        }
     }
 
     handlechange({target}){
@@ -65,11 +79,6 @@ class Edit extends React.Component {
         this.setState({
           date: date
         });
-    }
-
-    componentDidMount(){
-        this.checkAkses();
-        this.checkDate();
     }
 
     checkAkses(){
@@ -96,6 +105,32 @@ class Edit extends React.Component {
         }
     }
 
+    validateForm(post){
+        let field = post;
+        let formIsValid = true;
+        let errors = {};
+
+        if (field.title === "") {
+            formIsValid = false;
+            errors["title"] = "*Title is empty.";
+        }
+
+        if (field.imageLink === "") {
+            formIsValid = false;
+            errors["link"] = "*Image Link is empty.";
+        }
+
+        if (field.content === "") {
+            formIsValid = false;
+            errors["content"] = "*Content is empty.";
+        }
+
+        this.setState({
+            errors: errors
+        });
+        return formIsValid;
+    }
+
     render(){
         return <div className="col-lg-4">
                 <div className="card">
@@ -115,7 +150,14 @@ class Edit extends React.Component {
                             </div>
                             <div className="form-group">
                                 <label htmlFor="nf-date" className="form-control-label">Date</label>
-                                <DatePicker dateFormat="dd/MM/yyyy" selected={this.state.date} onChange={this.handleDate} disabled="true"/>
+                                <DatePicker 
+                                    timeInputLabel="Time:"
+                                    dateFormat="MM/dd/yyyy h:mm aa" 
+                                    showTimeInput
+                                    selected={new Date(this.state.date)} 
+                                    onChange={this.handleDate} 
+                                    disabled={true}
+                                />
                             </div>
                             <div className="form-group">
                                 <label htmlFor="nf-cat" className=" form-control-label">Category</label>
@@ -135,7 +177,7 @@ class Edit extends React.Component {
                                 <textarea type="text" id="nf-content" name="content" placeholder="" className="form-control" rows="5" value={this.state.content} onChange={this.handlechange} />
                             </div>
                             <button type="submit" className="btn btn-primary btn-sm">
-                                <i className="fa fa-dot-circle-o"></i> Simpan
+                                <i className="fa fa-dot-circle-o"></i> Save
                             </button>
                         </form>
                     </div>
@@ -144,4 +186,23 @@ class Edit extends React.Component {
     }
 }
 
-export default Edit;
+NewsEdit.propTypes = {
+    datas: PropTypes.array.isRequired,
+    category: PropTypes.array.isRequired,
+    startEditingNews: PropTypes.func.isRequired,
+    startLoadingNews: PropTypes.func.isRequired,
+    startLoadingCat: PropTypes.func.isRequired
+}
+
+const mapStateToProps = (state) => {
+  return {
+    datas: state.datas,
+    category: state.category
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return bindActionCreators({startEditingNews, startLoadingNews, startLoadingCat}, dispatch);
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(NewsEdit);

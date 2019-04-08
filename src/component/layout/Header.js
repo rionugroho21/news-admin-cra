@@ -17,9 +17,12 @@ class Header extends React.Component {
                             </form>
                         </div>
                         <div className="add">
-                            <Link className="add-trigger" to="/add"><i className="fa fa-plus"></i></Link>
+                            <Link className="add-trigger" to="/addNews"><i className="fa fa-plus"></i></Link>
                         </div>
-                        <Link className="mgl25" to="/view">Visit Web</Link>
+                        <div className="add mgl25">
+                            <Link className="add-trigger" to="/addMember"><i className="fa fa-user-plus"></i></Link>
+                        </div>
+                        <Link className="visit mgl25" to="/view">Visit Web</Link>
                     </div>
                 </div>
                 <div className="col-sm-5">
@@ -28,7 +31,7 @@ class Header extends React.Component {
                             <img className="user-avatar rounded-circle" src={imgPropic} alt="User Avatar" />
                         </a>
                         <div className="user-menu dropdown-menu">
-                            <a className="nav-link" href="#"><i className="fa fa-user"></i> My Profile</a>
+                            <Link className="nav-link" to="/profile"><i className="fa fa-user"></i> My Profile</Link>
                             <a className="nav-link" href="#"><i className="fa fa-power-off"></i> Logout</a>
                         </div>
                     </div>

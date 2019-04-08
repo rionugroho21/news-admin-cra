@@ -1,11 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import {Link} from 'react-router-dom';
 import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css';
-
+import {startRemovingNews} from '../../redux/actions/newsActions';
 import Popup from '../common/Popup';
 
-class Item extends React.Component {
+class NewsItem extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -20,7 +22,7 @@ class Item extends React.Component {
           buttons: [
             {
                 label: 'Yes',
-                onClick: () => this.props.startRemovingDatas(index, id)
+                onClick: () => this.props.startRemovingNews(index, id)
             },
             {
                 label: 'No',
@@ -104,7 +106,7 @@ class Item extends React.Component {
                     </form>
                 </div>
                 <div className="card-footer">
-                    <Link type="submit" className="btn btn-primary btn-sm" to={`/Edit/${post.id}`}>
+                    <Link type="submit" className="btn btn-primary btn-sm" to={`/editNews/${post.id}`}>
                         <i className="fa fa-dot-circle-o"></i> Edit
                     </Link>
                     <button onClick = {() => {
@@ -119,4 +121,15 @@ class Item extends React.Component {
     }
 }
 
-export default Item;
+NewsItem.propTypes = {
+    post: PropTypes.object.isRequired,
+    startRemovingNews: PropTypes.func.isRequired
+}
+
+const mapStateToProps = (state) => {
+  return {
+    datas: state.datas
+  };
+};
+
+export default connect(mapStateToProps, {startRemovingNews})(NewsItem);

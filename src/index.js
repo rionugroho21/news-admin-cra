@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './assets/vendor/font-awesome/css/font-awesome.min.css';
 import './assets/vendor/themify-icons/css/themify-icons.css';
-import './assets/css/style.scss';
 import './assets/css/admin.scss';
+import './assets/css/style.scss';
 import './assets/js/main.js';
 import '../node_modules/bootstrap/dist/js/bootstrap.min.js';
 
 import App from './App';
-import store from './store';
+import store from './redux/store';
 import {BrowserRouter} from 'react-router-dom';
 import {Provider} from 'react-redux';
 
