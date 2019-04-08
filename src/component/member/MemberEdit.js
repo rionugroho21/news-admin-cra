@@ -14,7 +14,7 @@ class MemberEdit extends React.Component{
         this.state = {
             id: post.id,
             name: post.name,
-            dateob: post.dateob,
+            dateob: new Date(post.dateob),
             email: post.email,
             phone: post.phone,
             sex: post.sex,
