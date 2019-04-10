@@ -4,63 +4,74 @@ import { connect } from 'react-redux';
 import {startLoadingNews} from '../../redux/actions/newsActions';
 import {startLoadingCat} from '../../redux/actions/categoryActions';
 import {startLoadingMember} from '../../redux/actions/memberActions';
+import LoadingDash from '../common/loading/LoadingDash';
 
 class Dashboard extends Component{
+    state = { loading: true }
+
     componentDidMount(){
-        this.props.startLoadingNews();
+        this.props.startLoadingNews().then(() => {
+            this.setState({loading: false});
+        });
         this.props.startLoadingMember();
         this.props.startLoadingCat();
     }
 
     render(){
-        console.log(this.props)
-        return <div>
-                <div className="col-sm-6 col-lg-3">
-                    <div className="card text-white bg-flat-color-1">
-                        <div className="card-body pb-0">
-                            <h4 className="mb-0">
-                                <span className="count">{this.props.datas.length}</span>
-                            </h4>
-                            <p className="text-light">News</p>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div className="col-sm-6 col-lg-3">
-                    <div className="card text-white bg-flat-color-2">
-                        <div className="card-body pb-0">
-                            <h4 className="mb-0">
-                                <span className="count">{this.props.member.length}</span>
-                            </h4>
-                            <p className="text-light">Members</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="col-sm-6 col-lg-3">
-                    <div className="card text-white bg-flat-color-3">
-                        <div className="card-body pb-0">
-                            <h4 className="mb-0">
-                                <span className="count">{this.props.category.length}</span>
-                            </h4>
-                            <p className="text-light">Category</p>
+        const datas = this.props.datas;
+        if (this.state.loading === true) {
+            return <LoadingDash />
+        }else if(datas){
+            return <div>
+                    <div className="col-sm-6 col-lg-3">
+                        <div className="card text-white bg-flat-color-1">
+                            <div className="card-body pb-0">
+                                <h4 className="mb-0">
+                                    <span className="count">{datas.length}</span>
+                                </h4>
+                                <p className="text-light">News</p>
+                            </div>
 
                         </div>
                     </div>
-                </div>
 
-                <div className="col-sm-6 col-lg-3">
-                    <div className="card text-white bg-flat-color-4">
-                        <div className="card-body pb-0">
-                            <h4 className="mb-0">
-                                <span className="count">10468</span>
-                            </h4>
-                            <p className="text-light">Members online</p>
+                    <div className="col-sm-6 col-lg-3">
+                        <div className="card text-white bg-flat-color-2">
+                            <div className="card-body pb-0">
+                                <h4 className="mb-0">
+                                    <span className="count">{this.props.member.length}</span>
+                                </h4>
+                                <p className="text-light">Members</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="col-sm-6 col-lg-3">
+                        <div className="card text-white bg-flat-color-3">
+                            <div className="card-body pb-0">
+                                <h4 className="mb-0">
+                                    <span className="count">{this.props.category.length}</span>
+                                </h4>
+                                <p className="text-light">Category</p>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="col-sm-6 col-lg-3">
+                        <div className="card text-white bg-flat-color-4">
+                            <div className="card-body pb-0">
+                                <h4 className="mb-0">
+                                    <span className="count">10468</span>
+                                </h4>
+                                <p className="text-light">Members online</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+        }else{
+            return <h1> ...No Post Found </h1>
+        }
     }
 }
 

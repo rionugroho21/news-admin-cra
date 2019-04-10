@@ -1,0 +1,29 @@
+.loadingDash{
+    height: auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-column-gap: 10px;
+}
+.loadingDash-box{
+    width: 100%;
+    height: 590px;
+}
+.loadingDash-box .loadingDash-content {
+    width: 100%;
+    height: 81px;
+    background-color: #bbb;
+    border-radius: 10px;
+    margin: 3px;
+    background-image: linear-gradient(90deg, #efefef 0px, rgba(229, 229, 229, 0.8) 40px, #eaeaea 80px);
+    background-size: 600px;
+    animation: shine-avatar 2s infinite ease-out;
+}
+@keyframes shine-avatar {
+    0% {
+      background-position: -32px;
+    }
+    40%, 100% {
+      background-position: 400px;
+    }
+}

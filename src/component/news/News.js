@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import NewsItem from './NewsItem';
 import {startLoadingNews} from '../../redux/actions/newsActions';
-import Loading from '../common/loading/Loading';
+import LoadingItem from '../common/loading/LoadingItem';
 
 class News extends Component{
     state = { loading: true }
@@ -17,7 +17,7 @@ class News extends Component{
     render(){
         const datas = this.props.datas;
         if (this.state.loading === true) {
-            return <Loading />
+            return <LoadingItem />
         }else if(datas){
             return (
                 <div className="animated fadeIn">

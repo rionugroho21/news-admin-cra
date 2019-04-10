@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom';
 import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css';
 import {startRemovingMember, startLoadingMember} from '../../redux/actions/memberActions';
-import Loading from '../common/loading/Loading';
+import LoadingItem from '../common/loading/LoadingItem';
 
 class Member extends React.Component{
     state = { loading: true }
@@ -38,7 +38,7 @@ class Member extends React.Component{
         const data = this.props.member;
 
         if (this.state.loading === true) {
-            return <Loading />
+            return <LoadingItem />
         }else if(data){
             return (
             <div className="animated fadeIn">
