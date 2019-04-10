@@ -17,9 +17,6 @@ export default () => {
                 <div class="loadingDash-box">
                     <div class="loadingDash-content"></div>
                 </div>
-                <div class="loadingDash-box">
-                    <div class="loadingDash-content"></div>
-                </div>
             </div>
         </div>
     )
