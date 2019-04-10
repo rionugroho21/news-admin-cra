@@ -4,6 +4,8 @@ import "../../../node_modules/react-datepicker/dist/react-datepicker.css";
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import {startEditingMember, startLoadingMember} from '../../redux/actions/memberActions';
+import AutoCompleteInput from '../common/autocompleteinput/AutoCompleteInput';
+import countries from '../../database/countries';
 
 class MemberEdit extends React.Component{
     constructor(props){
@@ -44,6 +46,7 @@ class MemberEdit extends React.Component{
         event.preventDefault();
         const date = new Date(this.state.dateob);
         const dateConvert = date.getFullYear() + '-' + (date.getMonth()+1) + '-' + date.getDate();
+        const country = event.target.elements.country.value;
         const post = {
             id: this.state.id,
             name: this.state.name,
@@ -52,7 +55,7 @@ class MemberEdit extends React.Component{
             phone: this.state.phone,
             sex: this.state.sex,
             zipCode: this.state.zip,
-            country: this.state.country,
+            country: country,
             address: this.state.address
         }
         if(this.validateForm(post)){
@@ -171,7 +174,8 @@ class MemberEdit extends React.Component{
                     </div>
                     <div className="form-group">
                         <label htmlFor="nf-country" className="form-control-label">Country</label>
-                        <input type="text" id="nf-country" name="country" placeholder="" className="form-control" value={this.state.country} onChange={this.handlechange} />
+                        {/* <input type="text" id="nf-country" name="country" placeholder="" className="form-control" value={this.state.country} onChange={this.handlechange} /> */}
+                        <AutoCompleteInput type="text" id="nf-country" name="country" placeholder="" className="form-control" value={this.state.country} onChange={this.handlechange} items={countries}/>
                         <div className="errorMsg">{this.state.errors.country}</div>
                     </div>
                     <div className="form-group">
@@ -202,7 +206,7 @@ MemberEdit.propTypes = {
 
 const mapStateToProps = (state) => {
   return {
-    member: state.member
+    member: state.member.member
   };
 };
 

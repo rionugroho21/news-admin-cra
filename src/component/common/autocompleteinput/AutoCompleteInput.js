@@ -45,6 +45,7 @@ class AutoCompleteInput extends React.Component{
 
     render(){
         const { text } = this.state;
+
         return <div className="autocomplete">
                 <input id={this.props.id} className={this.props.className} name={this.props.name} value={text} onChange={this.onTextChanged} type="text" />
                 {this.renderSuggestions()}

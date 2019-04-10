@@ -1,5 +1,5 @@
 import {database} from '../../database/config';
-import {LOAD_MEMBER, ADD_MEMBER, EDIT_MEMBER, REMOVE_MEMBER} from '../types';
+import {LOAD_MEMBER, MEMBER_LOADING, ADD_MEMBER, EDIT_MEMBER, REMOVE_MEMBER} from '../types';
 
 export function startLoadingMember() {
     return (dispatch) => {
@@ -12,6 +12,25 @@ export function startLoadingMember() {
         }).catch((error) => {
             console.log(error);
         });
+    }
+}
+
+export const getLoadMember = () => dispatch => {
+    dispatch(setMemberLoading());
+    database.ref('member').once('value').then((snapshot) => {
+        let datas = [];
+        snapshot.forEach((childSnapshot) => {
+            datas.push(childSnapshot.val());
+        });
+        dispatch(loadMember(datas));
+    }).catch((error) => {
+        console.log(error);
+    });
+}
+
+export const setMemberLoading = () => {
+    return {
+        type: MEMBER_LOADING
     }
 }
 

@@ -6,10 +6,17 @@ import {Link} from 'react-router-dom';
 import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css';
 import {startRemovingMember, startLoadingMember} from '../../redux/actions/memberActions';
+import Loading from '../common/loading/Loading';
 
 class Member extends React.Component{
+    state = { loading: true }
+
     componentDidMount(){
-        this.props.startLoadingMember();
+        this.props.startLoadingMember().then(() => {
+            //setTimeout(() => {
+                this.setState({loading: false});
+            //}, 500)
+        });
     }
 
     submit = (index, id) => {
@@ -31,7 +38,11 @@ class Member extends React.Component{
 
     render(){
         const data = this.props.member;
-        return (
+
+        if (this.state.loading === true) {
+            return <Loading />
+        }else if(data){
+            return (
             <div className="animated fadeIn">
                 <div className="row">
                     {data
@@ -109,7 +120,10 @@ class Member extends React.Component{
                     )}
                 </div>
             </div>
-        )
+            )
+        }else{
+            return <h1> ...No Post Found </h1>
+        }
     }
 }
 
@@ -120,7 +134,7 @@ Member.propTypes = {
 }
 
 const mapStateToProps = state => ({
-    member: state.member
+    member: state.member.member
 })
 
 const mapDispatchToProps = (dispatch) => {

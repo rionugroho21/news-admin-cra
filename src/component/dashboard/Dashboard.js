@@ -13,6 +13,7 @@ class Dashboard extends Component{
     }
 
     render(){
+        console.log(this.props)
         return <div>
                 <div className="col-sm-6 col-lg-3">
                     <div className="card text-white bg-flat-color-1">
@@ -65,6 +66,8 @@ class Dashboard extends Component{
 
 Dashboard.propTypes = {
     datas: PropTypes.array.isRequired,
+    member: PropTypes.array.isRequired,
+    category: PropTypes.array.isRequired,
     startLoadingNews: PropTypes.func.isRequired,
     startLoadingMember: PropTypes.func.isRequired,
     startLoadingCat: PropTypes.func.isRequired
@@ -72,7 +75,7 @@ Dashboard.propTypes = {
 
 const mapStateToProps = state => ({
     datas: state.datas,
-    member: state.member,
+    member: state.member.member,
     category: state.category
 })
 

@@ -1,5 +1,7 @@
 export const LOAD_CATEGORY = 'LOAD_CATEGORY';
 
+export const MEMBER_LOADING = 'MEMBER_LOADING';
+
 export const LOAD_RATES = 'LOAD_RATES';
 
 export const LOAD_DATAS = 'LOAD_DATAS';
