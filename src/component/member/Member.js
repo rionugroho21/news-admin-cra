@@ -13,9 +13,7 @@ class Member extends React.Component{
 
     componentDidMount(){
         this.props.startLoadingMember().then(() => {
-            //setTimeout(() => {
-                this.setState({loading: false});
-            //}, 500)
+            this.setState({loading: false});
         });
     }
 

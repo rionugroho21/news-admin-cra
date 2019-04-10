@@ -3,22 +3,33 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import NewsItem from './NewsItem';
 import {startLoadingNews} from '../../redux/actions/newsActions';
+import Loading from '../common/loading/Loading';
 
 class News extends Component{
+    state = { loading: true }
+
     componentDidMount(){
-        this.props.startLoadingNews();
+        this.props.startLoadingNews().then(() => {
+            this.setState({loading: false});
+        });
     }
 
     render(){
         const datas = this.props.datas;
-        return (
-            <div className="animated fadeIn">
-                <div className="row">
-                    {datas
-                    .map((post, index) => <NewsItem key={index} post={post} index={index}/>)}
+        if (this.state.loading === true) {
+            return <Loading />
+        }else if(datas){
+            return (
+                <div className="animated fadeIn">
+                    <div className="row">
+                        {datas
+                        .map((post, index) => <NewsItem key={index} post={post} index={index}/>)}
+                    </div>
                 </div>
-            </div>
-        )
+            )
+        }else{
+            return <h1> ...No Post Found </h1>
+        }
     }
 }
 
