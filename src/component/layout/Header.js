@@ -7,7 +7,7 @@ class Header extends React.Component {
         return <header id="header" className="header">
             <div className="header-menu">
                 <div className="col-sm-7">
-                    <a id="menuToggle" className="menutoggle pull-left"><i className="fa fa fa-tasks"></i></a>
+                    <p id="menuToggle" className="menutoggle pull-left"><i className="fa fa fa-tasks"></i></p>
                     <div className="header-left">
                         <button className="search-trigger"><i className="fa fa-search"></i></button>
                         <div className="form-inline">
@@ -27,12 +27,12 @@ class Header extends React.Component {
                 </div>
                 <div className="col-sm-5">
                     <div className="user-area dropdown float-right">
-                        <a href="#" className="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <div className="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <img className="user-avatar rounded-circle" src={imgPropic} alt="User Avatar" />
-                        </a>
+                        </div>
                         <div className="user-menu dropdown-menu">
                             <Link className="nav-link" to="/profile"><i className="fa fa-user"></i> My Profile</Link>
-                            <a className="nav-link" href="#"><i className="fa fa-power-off"></i> Logout</a>
+                            <Link className="nav-link" to="/"><i className="fa fa-power-off"></i> Logout</Link>
                         </div>
                     </div>
                 </div>

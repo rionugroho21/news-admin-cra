@@ -12,7 +12,7 @@ class Breadcrumbs extends React.Component {
                 <div className="page-header float-right">
                     <div className="page-title">
                         <ol className="breadcrumb text-right">
-                            <li><a>Dashboard</a></li>
+                            <li>Dashboard</li>
                             <li className="active">Data</li>
                         </ol>
                     </div>

@@ -243,3 +243,5 @@ const country = [
     {name: 'Zambia', code: 'ZM'}, 
     {name: 'Zimbabwe', code: 'ZW'} 
 ];
+
+export default country;

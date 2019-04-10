@@ -5,6 +5,8 @@ import {bindActionCreators} from 'redux';
 import DatePicker from "react-datepicker";
 import "../../../node_modules/react-datepicker/dist/react-datepicker.css";
 import {startAddingMember} from '../../redux/actions/memberActions';
+import AutoCompleteInput from '../common/autocompleteinput/AutoCompleteInput';
+import contries from '../../database/contries';
 
 class MemberAdd extends React.Component{
     constructor(props){
@@ -167,7 +169,7 @@ class MemberAdd extends React.Component{
                             </div>
                             <div className="form-group">
                                 <label htmlFor="nf-country" className="form-control-label">Country</label>
-                                <input type="text" id="nf-country" name="country" placeholder="" className="form-control" />
+                                <AutoCompleteInput type="text" id="nf-country" name="country" placeholder="" className="form-control" items={contries}/>
                                 <div className="errorMsg">{this.state.errors.country}</div>
                             </div>
                             <div className="form-group">

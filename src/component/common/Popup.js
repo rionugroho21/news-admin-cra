@@ -5,7 +5,7 @@ class Popup extends React.Component{
         return  <div className='popup'>
                     <div className='popup_inner'>
                         <div className='popup_box'>
-                            <img src={this.props.imgSrc}/>
+                            <img src={this.props.imgSrc} alt=""/>
                             <button className='close' onClick={this.props.closePopup}><i class="fa fa-close"></i></button>
                         </div>
                     </div>

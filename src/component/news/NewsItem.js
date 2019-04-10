@@ -51,7 +51,7 @@ class NewsItem extends React.Component {
                     <form>
                         <div className="row form-group">
                             <div className="col-md-6 offset-md-3" onClick={this.togglePopup}>
-                                <img src={post.imageLink} />
+                                <img src={post.imageLink} alt="" />
                                 {this.state.showPopup ? 
                                 <Popup
                                     imgSrc={post.imageLink}
