@@ -13,6 +13,7 @@ import NewsAdd from'./news/NewsAdd';
 import Dashboard from './dashboard/Dashboard';
 import Login from './auth/Login';
 import Photo from './photo/Photo';
+import Table from './table/Table';
 
 class Main extends Component{
 
@@ -33,6 +34,7 @@ class Main extends Component{
                             <Route exact path="/addMember" component={ MemberAdd }/>
                             <Route exact path="/editMember/:id" component={ MemberEdit }/>
                             <Route exact path="/photo" component={ Photo }/>
+                            <Route exact path="/table" component={ Table }/>
                             <Route exact render = {() => <h1>Page not found</h1>} />
                         </Switch>
                     </div>

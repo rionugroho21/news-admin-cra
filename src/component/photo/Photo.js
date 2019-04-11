@@ -11,7 +11,6 @@ class Photo extends React.Component{
 
     render(){
         const { photo, loading } = this.props.photo;
-        console.log(photo);
 
         if(loading === true){
             return <Loading />
