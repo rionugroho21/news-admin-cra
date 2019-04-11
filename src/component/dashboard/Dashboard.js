@@ -19,9 +19,11 @@ class Dashboard extends Component{
 
     render(){
         const datas = this.props.datas;
+        const member = this.props.datas;
+        const category = this.props.datas;
         if (this.state.loading === true) {
             return <LoadingDash />
-        }else if(datas){
+        }else if(datas && member && category){
             return <div>
                     <div className="col-sm-6 col-lg-3">
                         <div className="card text-white bg-flat-color-1">
@@ -39,7 +41,7 @@ class Dashboard extends Component{
                         <div className="card text-white bg-flat-color-2">
                             <div className="card-body pb-0">
                                 <h4 className="mb-0">
-                                    <span className="count">{this.props.member.length}</span>
+                                    <span className="count">{member.length}</span>
                                 </h4>
                                 <p className="text-light">Members</p>
                             </div>
@@ -50,7 +52,7 @@ class Dashboard extends Component{
                         <div className="card text-white bg-flat-color-3">
                             <div className="card-body pb-0">
                                 <h4 className="mb-0">
-                                    <span className="count">{this.props.category.length}</span>
+                                    <span className="count">{category.length}</span>
                                 </h4>
                                 <p className="text-light">Category</p>
 

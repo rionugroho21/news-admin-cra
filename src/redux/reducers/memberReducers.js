@@ -1,18 +1,8 @@
-//import _datas from '../../data/datas';
-import {LOAD_MEMBER, MEMBER_LOADING, ADD_MEMBER, EDIT_MEMBER, REMOVE_MEMBER} from '../types';
+import _datas from '../../data/datas';
+import {LOAD_MEMBER, ADD_MEMBER, EDIT_MEMBER, REMOVE_MEMBER} from '../types';
 
-const initialState = {
-    member: [],
-    loading: false
-}
-
-function member(state = initialState, action) {
+function member(state = _datas, action) {
     switch (action.type) {
-        case MEMBER_LOADING:
-            return {
-                ...state,
-                loading: true
-            }
         case REMOVE_MEMBER: 
             return [
                 ...state.slice(0, action.index), 
