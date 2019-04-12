@@ -9,11 +9,7 @@ function member(state = _datas, action) {
                 ...state.slice(action.index + 1)
             ];
         case ADD_MEMBER: return [...state, action.post];
-        case LOAD_MEMBER: 
-            return {
-                ...state,
-                member: action.datas
-            }
+        case LOAD_MEMBER: return action.datas;
         case EDIT_MEMBER: return [...state, action.post];
         default: return state;
     }

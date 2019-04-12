@@ -18,34 +18,34 @@ class Login extends React.Component{
     }
 
     render(){
-        return <div class="sufee-login d-flex align-content-center flex-wrap">
-                    <div class="container">
-                        <div class="login-content">
-                            <div class="login-logo">
+        return <div className="sufee-login d-flex align-content-center flex-wrap">
+                    <div className="container">
+                        <div className="login-content">
+                            <div className="login-logo">
                                 <a href="index.html">
-                                    <img class="align-content" src={imgLogo} alt="" />
+                                    <img className="align-content" src={imgLogo} alt="" />
                                 </a>
                             </div>
-                            <div class="login-form">
+                            <div className="login-form">
                                 <form onSubmit={this.handleSubmit}>
-                                    <div class="form-group">
+                                    <div className="form-group">
                                         <label>Username</label>
-                                        <input type="text" class="form-control" placeholder="Username" onChange={this.handleChange} />
+                                        <input type="text" className="form-control" placeholder="Username" onChange={this.handleChange} />
                                     </div>
-                                    <div class="form-group">
+                                    <div className="form-group">
                                         <label>Password</label>
-                                        <input type="password" class="form-control" placeholder="Password" onChange={this.handleChange} />
+                                        <input type="password" className="form-control" placeholder="Password" onChange={this.handleChange} />
                                     </div>
-                                    {/* <div class="checkbox">
+                                    {/* <div className="checkbox">
                                         <label>
                                             <input type="checkbox" /> Remember Me
                                         </label>
-                                        <label class="pull-right">
+                                        <label className="pull-right">
                                             <a href="#">Forgotten Password?</a>
                                         </label>
                                     </div> */}
-                                    <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30">Sign in</button>
-                                    {/* <div class="register-link m-t-15 text-center">
+                                    <button type="submit" className="btn btn-success btn-flat m-b-30 m-t-30">Sign in</button>
+                                    {/* <div className="register-link m-t-15 text-center">
                                         <p>Don't have account ? <a href="#"> Sign Up Here</a></p>
                                     </div> */}
                                 </form>

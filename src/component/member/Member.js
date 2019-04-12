@@ -132,7 +132,7 @@ Member.propTypes = {
 }
 
 const mapStateToProps = state => ({
-    member: state.member.member
+    member: state.member
 })
 
 const mapDispatchToProps = (dispatch) => {

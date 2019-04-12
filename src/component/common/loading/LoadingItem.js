@@ -4,21 +4,21 @@ import './loadingItem.css'
 export default () => {
     return (
         <div>
-            <div class="wrap">
-                <div class="loading-box">
-                    <div class="loading-head"></div>
-                    <div class="loading-content"></div>
-                    <div class="loading-footer"></div>
+            <div className="wrap">
+                <div className="loading-box">
+                    <div className="loading-head"></div>
+                    <div className="loading-content"></div>
+                    <div className="loading-footer"></div>
                 </div>
-                <div class="loading-box">
-                    <div class="loading-head"></div>
-                    <div class="loading-content"></div>
-                    <div class="loading-footer"></div>
+                <div className="loading-box">
+                    <div className="loading-head"></div>
+                    <div className="loading-content"></div>
+                    <div className="loading-footer"></div>
                 </div>
-                <div class="loading-box">
-                    <div class="loading-head"></div>
-                    <div class="loading-content"></div>
-                    <div class="loading-footer"></div>
+                <div className="loading-box">
+                    <div className="loading-head"></div>
+                    <div className="loading-content"></div>
+                    <div className="loading-footer"></div>
                 </div>
             </div>
         </div>

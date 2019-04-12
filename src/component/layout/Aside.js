@@ -21,7 +21,7 @@ class Aside extends React.Component {
                             <Link to="/news"><i className="menu-icon fa fa-newspaper-o"></i>News </Link>
                             <Link to="/member"><i className="menu-icon fa fa-user-circle"></i>Member </Link>
                             <Link to="/photo"><i className="menu-icon fa fa-picture-o"></i>Photo </Link>
-                            <Link to="/table"><i className="menu-icon fa fa-table"></i>Table </Link>
+                            <Link to="/table"><i className="menu-icon fa fa-table"></i>Comment </Link>
                         </li>
                     </ul>
                 </div>

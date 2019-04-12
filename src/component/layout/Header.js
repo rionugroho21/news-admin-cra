@@ -22,10 +22,10 @@ class Header extends React.Component {
                         <div className="add mgl25">
                             <Link className="add-trigger" to="/addMember"><i className="fa fa-user-plus"></i></Link>
                         </div>
-                        <Link className="visit mgl25" to="/view">Visit Web</Link>
+                        {/* <Link className="visit mgl25" to="/view">Visit Web</Link> */}
                     </div>
                 </div>
-                <div className="col-sm-5">
+                {/* <div className="col-sm-5">
                     <div className="user-area dropdown float-right">
                         <div className="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <img className="user-avatar rounded-circle" src={imgPropic} alt="User Avatar" />
@@ -35,7 +35,7 @@ class Header extends React.Component {
                             <Link className="nav-link" to="/"><i className="fa fa-power-off"></i> Logout</Link>
                         </div>
                     </div>
-                </div>
+                </div> */}
             </div>
         </header>
     }
