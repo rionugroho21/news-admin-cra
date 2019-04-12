@@ -4,12 +4,6 @@ import { connect } from 'react-redux';
 import {startLoadTable} from '../../redux/actions/tableActions';
 import Loading from '../common/loading/LoadingDots';
 
-function searchingFor(term) {
-    return function(x){
-        return x.name.toLowerCase().includes(term.toLowerCase()) || false;
-    }
-}
-
 class Table extends React.Component{
     constructor(props){
         super(props);
@@ -17,6 +11,7 @@ class Table extends React.Component{
             term: ''
         }
         this.searchHandler = this.searchHandler.bind(this);
+        //this.searchingFor = this.searchingFor.bind(this);
     }
 
     componentDidMount(){
@@ -25,6 +20,14 @@ class Table extends React.Component{
 
     searchHandler = (e) => {
         this.setState({term: e.target.value});
+    }
+
+    searchingFor = (term) => {
+        return (x) => {
+            if(x.name !== null && x.name !== "" && x.name !== undefined){
+                return x.name.toLowerCase().includes(term.toLowerCase()) || false;
+            }
+        }
     }
 
     render(){
@@ -54,18 +57,18 @@ class Table extends React.Component{
                                 <table id="tableData" className="table table-striped table-bordered">
                                     <thead className="thead-dark">
                                         <tr>
-                                            <th data-field="state" data-checkbox="true"></th>
-                                            <th data-field="id" data-filter-control="input" data-sortable="true">Id</th>
-                                            <th data-field="name" data-filter-control="select" data-sortable="true">Name</th>
-                                            <th data-field="email" data-filter-control="select" data-sortable="true">Email</th>
-                                            <th data-field="body" data-sortable="true">Content</th>
-                                            <th data-field="" data-sortable="true"></th>
+                                            <th></th>
+                                            <th>Id</th>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>Content</th>
+                                            <th></th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {table.filter(searchingFor(term)).map((data, index) =>
+                                        {table.filter(this.searchingFor(term)).map((data, index) =>
                                             <tr key={index}>
-                                                <td className="bs-checkbox "><input data-index="0" name="btSelectItem" type="checkbox" /></td>
+                                                <td className="bs-checkbox "><input name="btSelectItem" type="checkbox" /></td>
                                                 <td>{data.id}</td>
                                                 <td>{data.name}</td>
                                                 <td>{data.email}</td>
