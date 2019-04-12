@@ -9,7 +9,7 @@ class Header extends React.Component {
                 <div className="col-sm-7">
                     <p id="menuToggle" className="menutoggle pull-left"><i className="fa fa fa-tasks"></i></p>
                     <div className="header-left">
-                        <button className="search-trigger"><i className="fa fa-search"></i></button>
+                        {/* <button className="search-trigger"><i className="fa fa-search"></i></button> */}
                         <div className="form-inline">
                             <form className="search-form">
                                 <input className="form-control mr-sm-2" type="text" placeholder="Search ..." aria-label="Search" />

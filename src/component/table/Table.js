@@ -11,7 +11,6 @@ class Table extends React.Component{
             term: ''
         }
         this.searchHandler = this.searchHandler.bind(this);
-        //this.searchingFor = this.searchingFor.bind(this);
     }
 
     componentDidMount(){
@@ -61,7 +60,7 @@ class Table extends React.Component{
                                             <th>Id</th>
                                             <th>Name</th>
                                             <th>Email</th>
-                                            <th>Content</th>
+                                            <th>Comment</th>
                                             <th></th>
                                         </tr>
                                     </thead>
@@ -73,9 +72,11 @@ class Table extends React.Component{
                                                 <td>{data.name}</td>
                                                 <td>{data.email}</td>
                                                 <td>{data.body}</td>
-                                                <td className="table-button">
-                                                    <button className="btn btn-success"><i className="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-                                                    <button className="btn btn-danger"><i className="fa fa-trash" aria-hidden="true"></i></button>
+                                                <td className="table-wrap">
+                                                    <div className="table-button">
+                                                        <button className="btn btn-success"><i className="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                                                        <button className="btn btn-danger"><i className="fa fa-trash" aria-hidden="true"></i></button>
+                                                    </div>
                                                 </td>
                                             </tr>
                                         )}

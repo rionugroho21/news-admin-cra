@@ -180,6 +180,9 @@ html, body{width: 100%;height: 100%;font-family: 'Lato', sans-serif;}
     padding: 8px 0px;
 }
 
+.table-wrap{
+    vertical-align: middle !important;
+}
 .table-button{
     display: grid;
     grid-template-columns: auto auto;

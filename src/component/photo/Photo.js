@@ -27,15 +27,15 @@ class Photo extends React.Component{
                             </div>
                         )}
                     </div>
-                    <div className="row pagination-photo">
+                    {/* <div className="row pagination-photo">
                         <ul className="pagination">
                             <li className="page-item"><a className="page-link" href="#">Previous</a></li>
-                            <li className="page-item"><a className="page-link" href="#">1</a></li>
-                            <li className="page-item active"><a className="page-link" href="#">2</a></li>
+                            <li className="page-item active"><a className="page-link" href="#">1</a></li>
+                            <li className="page-item"><a className="page-link" href="#">2</a></li>
                             <li className="page-item"><a className="page-link" href="#">3</a></li>
                             <li className="page-item"><a className="page-link" href="#">Next</a></li>
                         </ul>
-                    </div>
+                    </div> */}
                 </div>
             )
         }else{
