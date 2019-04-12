@@ -42,6 +42,7 @@ class Table extends React.Component{
                                     <input type="text" id="searchData" name="" placeholder="Search by name..." className="form-control" onChange={this.searchHandler} value={term}/>
                                 </div>
                                 {/* <div className="form-group filter">
+                                    <label htmlFor="nf-filter" className="">Sort by</label>
                                     <select className="form-control">
                                         <option value="">Name</option>
                                         <option value="all">Email</option>
@@ -58,6 +59,7 @@ class Table extends React.Component{
                                             <th data-field="name" data-filter-control="select" data-sortable="true">Name</th>
                                             <th data-field="email" data-filter-control="select" data-sortable="true">Email</th>
                                             <th data-field="body" data-sortable="true">Content</th>
+                                            <th data-field="" data-sortable="true"></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -68,6 +70,10 @@ class Table extends React.Component{
                                                 <td>{data.name}</td>
                                                 <td>{data.email}</td>
                                                 <td>{data.body}</td>
+                                                <td className="table-button">
+                                                    <button className="btn btn-success"><i className="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                                                    <button className="btn btn-danger"><i className="fa fa-trash" aria-hidden="true"></i></button>
+                                                </td>
                                             </tr>
                                         )}
                                     </tbody>
