@@ -11,12 +11,10 @@ import News from './news/News';
 import NewsEdit from './news/NewsEdit';
 import NewsAdd from'./news/NewsAdd';
 import Dashboard from './dashboard/Dashboard';
-import Login from './auth/Login';
 import Photo from './photo/Photo';
 import Table from './table/Table';
 
 class Main extends Component{
-
     render(){
         return <div>
                 <Aside />
@@ -24,7 +22,6 @@ class Main extends Component{
                     <Header />
                     <Breadcrumbs />
                     <div className="content mt-3">
-                        <Route exact path="/login" component={ Login }></Route>
                         <Switch>
                             <Route exact path="/" component={ Dashboard }/>
                             <Route exact path="/news" component={ News }/>

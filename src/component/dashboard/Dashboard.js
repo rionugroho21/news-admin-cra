@@ -31,8 +31,8 @@ class Dashboard extends Component{
             return <div>
                     <div className="col-sm-6 col-lg-3">
                         <div className="card text-white bg-flat-color-1">
-                            <div className="card-body pb-0">
-                                <h4 className="mb-0">
+                            <div className="card-body">
+                                <h4 className="mb-1">
                                     <span className="count">{datas.length}</span>
                                 </h4>
                                 <p className="text-light">News</p>
@@ -43,8 +43,8 @@ class Dashboard extends Component{
 
                     <div className="col-sm-6 col-lg-3">
                         <div className="card text-white bg-flat-color-2">
-                            <div className="card-body pb-0">
-                                <h4 className="mb-0">
+                            <div className="card-body">
+                                <h4 className="mb-1">
                                     <span className="count">{member.length}</span>
                                 </h4>
                                 <p className="text-light">Members</p>
@@ -54,8 +54,8 @@ class Dashboard extends Component{
 
                     <div className="col-sm-6 col-lg-3">
                         <div className="card text-white bg-flat-color-3">
-                            <div className="card-body pb-0">
-                                <h4 className="mb-0">
+                            <div className="card-body">
+                                <h4 className="mb-1">
                                     <span className="count">{category.length}</span>
                                 </h4>
                                 <p className="text-light">Category</p>
@@ -66,8 +66,8 @@ class Dashboard extends Component{
 
                     <div className="col-sm-6 col-lg-3">
                         <div className="card text-white bg-flat-color-4">
-                            <div className="card-body pb-0">
-                                <h4 className="mb-0">
+                            <div className="card-body">
+                                <h4 className="mb-1">
                                     <span className="count">{photo.length}</span>
                                 </h4>
                                 <p className="text-light">Photo</p>
