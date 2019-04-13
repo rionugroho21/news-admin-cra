@@ -1,14 +1,14 @@
 import {database} from '../../database/config';
-import {LOAD_DATAS, ADD_POST, EDIT_POST, REMOVE_POST} from '../types';
+import {LOAD_NEWS, ADD_NEWS, EDIT_NEWS, REMOVE_NEWS} from '../types';
 
 export function startLoadingNews() {
     return (dispatch) => {
         return database.ref('datas').once('value').then((snapshot) => {
-            let datas = [];
+            let news = [];
             snapshot.forEach((childSnapshot) => {
-                datas.push(childSnapshot.val());
+                news.push(childSnapshot.val());
             });
-            dispatch(loadDatas(datas));
+            dispatch(loadDatas(news));
         }).catch((error) => {
             console.log(error);
         });
@@ -49,30 +49,30 @@ export function startRemovingNews(index, id) {
     }
 }
 
-export function loadDatas(datas) {
+export function loadDatas(news) {
     return {
-        type: LOAD_DATAS,
-        datas
+        type: LOAD_NEWS,
+        news
     }
 }
 
 export function addPost(post) {
     return {
-        type: ADD_POST,
+        type: ADD_NEWS,
         post
     }
 }
 
 export function editPost(post) {
     return {
-        type: EDIT_POST,
+        type: EDIT_NEWS,
         post
     }
 }
 
 export function removePost(index) {
     return {
-        type: REMOVE_POST,
+        type: REMOVE_NEWS,
         index
     }
 }

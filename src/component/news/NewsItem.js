@@ -122,13 +122,14 @@ class NewsItem extends React.Component {
 }
 
 NewsItem.propTypes = {
+    news: PropTypes.array.isRequired,
     post: PropTypes.object.isRequired,
     startRemovingNews: PropTypes.func.isRequired
 }
 
 const mapStateToProps = (state) => {
   return {
-    datas: state.datas
+    news: state.news
   };
 };
 

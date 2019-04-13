@@ -1,4 +1,3 @@
-import _datas from '../../data/datas';
 import {TABLE_LOADING, LOAD_TABLE} from '../types';
 
 const initialState = {

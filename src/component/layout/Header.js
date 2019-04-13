@@ -1,5 +1,5 @@
 import React from 'react';
-import imgPropic from '../../assets/img/admin.jpg';
+// import imgPropic from '../../assets/img/admin.jpg';
 import {Link} from 'react-router-dom';
 
 class Header extends React.Component {
@@ -19,7 +19,7 @@ class Header extends React.Component {
                         <div className="add">
                             <Link className="add-trigger" to="/addNews"><i className="fa fa-plus"></i></Link>
                         </div>
-                        <div className="add mgl25">
+                        <div className="add mgl30">
                             <Link className="add-trigger" to="/addMember"><i className="fa fa-user-plus"></i></Link>
                         </div>
                         {/* <Link className="visit mgl25" to="/view">Visit Web</Link> */}

@@ -20,20 +20,20 @@ class Dashboard extends Component{
     }
 
     render(){
-        const datas = this.props.datas;
+        const news = this.props.news;
         const member = this.props.member;
         const comment = this.props.comment;
         const {photo, loading} = this.props.photo;
 
         if (this.state.loading === true && loading === true) {
             return <LoadingDash />
-        }else if(datas && member && comment && photo){
+        }else if(news && member && comment && photo){
             return <div>
                     <div className="col-sm-6 col-lg-3">
                         <div className="card text-white bg-flat-color-1">
                             <div className="card-body">
                                 <h4 className="mb-1">
-                                    <span className="count">{datas.length}</span>
+                                    <span className="count">{news.length}</span>
                                 </h4>
                                 <p className="text-light">News</p>
                             </div>
@@ -82,7 +82,7 @@ class Dashboard extends Component{
 }
 
 Dashboard.propTypes = {
-    datas: PropTypes.array.isRequired,
+    news: PropTypes.array.isRequired,
     member: PropTypes.array.isRequired,
     comment: PropTypes.array.isRequired,
     photo: PropTypes.object.isRequired,
@@ -93,7 +93,7 @@ Dashboard.propTypes = {
 }
 
 const mapStateToProps = state => ({
-    datas: state.datas,
+    news: state.news,
     member: state.member,
     comment: state.table.table,
     photo: state.photo

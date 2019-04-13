@@ -34,8 +34,8 @@ class Table extends React.Component{
 
     onSort(event, sortKey){
         const data = this.props.table.table;
-        data.sort((a,b) => a[sortKey].localeCompare(b[sortKey]))
-        this.setState({data})
+        data.sort((a,b) => a[sortKey].localeCompare(b[sortKey]));
+        this.setState({data});
     }
 
     handleOption({target}) {
@@ -74,7 +74,7 @@ class Table extends React.Component{
                                     <thead className="thead-dark">
                                         <tr>
                                             <th></th>
-                                            <th onClick={e => this.onSort(e, 'postId')}>Id</th>
+                                            <th onClick={e => this.onSort(e, 'id')}>Id</th>
                                             <th onClick={e => this.onSort(e, 'name')}>Name</th>
                                             <th onClick={e => this.onSort(e, 'email')}>Email</th>
                                             <th onClick={e => this.onSort(e, 'body')}>Comment</th>

@@ -15,14 +15,14 @@ class News extends Component{
     }
 
     render(){
-        const datas = this.props.datas;
+        const news = this.props.news;
         if (this.state.loading === true) {
             return <LoadingItem />
-        }else if(datas){
+        }else if(news){
             return (
                 <div className="animated fadeIn">
                     <div className="row">
-                        {datas
+                        {news
                         .map((post, index) => <NewsItem key={index} post={post} index={index}/>)}
                     </div>
                 </div>
@@ -34,12 +34,12 @@ class News extends Component{
 }
 
 News.propTypes = {
-    datas: PropTypes.array.isRequired,
+    news: PropTypes.array.isRequired,
     startLoadingNews: PropTypes.func.isRequired
 }
 
 const mapStateToProps = state => ({
-    datas: state.datas
+    news: state.news
 })
 
 export default connect(mapStateToProps, {startLoadingNews})(News);

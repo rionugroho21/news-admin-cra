@@ -1,4 +1,3 @@
-import _datas from '../../data/datas';
 import {PHOTO_LOADING, LOAD_PHOTO} from '../types';
 
 const initialState = {

@@ -21,7 +21,7 @@ class Photo extends React.Component{
                         {photo.map((data, index) => 
                             <div className="col-lg-2" key={index} index={index}>
                                 <div className="photo">
-                                    <div className="photo-img"><img src={data.thumbnailUrl} /></div>
+                                    <div className="photo-img"><img src={data.thumbnailUrl} alt="" /></div>
                                     <div className="photo-title">{data.title}</div>
                                 </div>
                             </div>

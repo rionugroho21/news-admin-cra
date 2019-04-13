@@ -11,9 +11,9 @@ import {startLoadingCat} from '../../redux/actions/categoryActions';
 class NewsEdit extends React.Component {
     constructor(props){
         super(props);
-        const datas = this.props.datas;
+        const news = this.props.news;
         const id = Number(this.props.match.params.id);
-        const post = datas.find((post) => post.id === id);
+        const post = news.find((post) => post.id === id);
         this.state = {
             id: post.id,
             imageLink: post.imageLink,
@@ -187,7 +187,7 @@ class NewsEdit extends React.Component {
 }
 
 NewsEdit.propTypes = {
-    datas: PropTypes.array.isRequired,
+    news: PropTypes.array.isRequired,
     category: PropTypes.array.isRequired,
     startEditingNews: PropTypes.func.isRequired,
     startLoadingNews: PropTypes.func.isRequired,
@@ -196,7 +196,7 @@ NewsEdit.propTypes = {
 
 const mapStateToProps = (state) => {
   return {
-    datas: state.datas,
+    news: state.news,
     category: state.category
   };
 };

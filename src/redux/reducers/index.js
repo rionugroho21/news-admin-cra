@@ -6,7 +6,7 @@ import photoReducers from './photoReducers';
 import tableReducers from './tableReducers';
 
 export default combineReducers({
-    datas: newsReducers,
+    news: newsReducers,
     category: categoryReducers,
     member: memberReducers,
     photo: photoReducers,
