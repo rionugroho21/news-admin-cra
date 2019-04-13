@@ -8,9 +8,12 @@ class Table extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            term: ''
+            term: '',
+            option: 'name'
         }
         this.searchHandler = this.searchHandler.bind(this);
+        this.onSort = this.onSort.bind(this)
+        this.handleOption = this.handleOption.bind(this)
     }
 
     componentDidMount(){
@@ -21,17 +24,31 @@ class Table extends React.Component{
         this.setState({term: e.target.value});
     }
 
-    searchingFor = (term) => {
+    searchingFor = (term, option) => {
         return (x) => {
-            if(x.name !== null && x.name !== "" && x.name !== undefined){
-                return x.name.toLowerCase().includes(term.toLowerCase()) || false;
+            if(x[option] !== null && x[option] !== "" && x[option] !== undefined){
+                return x[option].toLowerCase().includes(term.toLowerCase()) || false;
             }
         }
+    }
+
+    onSort(event, sortKey){
+        const data = this.props.table.table;
+        data.sort((a,b) => a[sortKey].localeCompare(b[sortKey]))
+        this.setState({data})
+    }
+
+    handleOption({target}) {
+        this.setState({
+            [target.name]: target.value
+        });
     }
 
     render(){
         const { table, loading } = this.props.table;
         const term = this.state.term;
+        const option = this.state.option;
+
         if(loading === true){
             return <Loading />
         }else if(table){
@@ -41,31 +58,31 @@ class Table extends React.Component{
                         <div className="container">
                             <div className="clearfix">
                                 <div className="form-group search">
-                                    <input type="text" id="searchData" name="" placeholder="Search by name..." className="form-control" onChange={this.searchHandler} value={term}/>
+                                    <input type="text" id="searchData" name="" placeholder="Search..." className="form-control" onChange={this.searchHandler} value={term}/>
                                 </div>
-                                {/* <div className="form-group filter">
-                                    <label htmlFor="nf-filter" className="">Sort by</label>
-                                    <select className="form-control">
-                                        <option value="">Name</option>
-                                        <option value="all">Email</option>
-                                        <option value="selected">Content</option>
+                                <div className="form-group filter">
+                                    <label htmlFor="nf-filter" className="">Search by</label>
+                                    <select className="form-control" name="option" value={this.state.option} onChange={this.handleOption}>
+                                        <option value="name">Name</option>
+                                        <option value="email">Email</option>
+                                        <option value="body">Comment</option>
                                     </select>
-                                </div> */}
+                                </div>
                             </div>
                             <div className="table-responsive">
                                 <table id="tableData" className="table table-striped table-bordered">
                                     <thead className="thead-dark">
                                         <tr>
                                             <th></th>
-                                            <th>Id</th>
-                                            <th>Name</th>
-                                            <th>Email</th>
-                                            <th>Comment</th>
+                                            <th onClick={e => this.onSort(e, 'postId')}>Id</th>
+                                            <th onClick={e => this.onSort(e, 'name')}>Name</th>
+                                            <th onClick={e => this.onSort(e, 'email')}>Email</th>
+                                            <th onClick={e => this.onSort(e, 'body')}>Comment</th>
                                             <th></th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {table.filter(this.searchingFor(term)).map((data, index) =>
+                                        {table.filter(this.searchingFor(term, option)).map((data, index) =>
                                             <tr key={index}>
                                                 <td className="bs-checkbox "><input name="btSelectItem" type="checkbox" /></td>
                                                 <td>{data.id}</td>
