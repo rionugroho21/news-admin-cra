@@ -1,7 +1,8 @@
 import React from 'react';
-import Enzyme, {shallow, mount} from 'enzyme';
+import Enzyme, {shallow, mount, render} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import configureStore from 'redux-mock-store';
+Enzyme.configure({adapter: new Adapter()});
 
 //Component
 import App from './App';
@@ -28,8 +29,6 @@ import Comment from './component/comment/Comment';
 //Action
 import { startLoadingNews } from './redux/actions/newsActions';
 
-Enzyme.configure({adapter: new Adapter()});
-
 describe('<App />', () => {
   it('renders App without crashing', () => {
     shallow(<App />);
@@ -48,7 +47,7 @@ describe('<Aside />', () => {
   it('renders correctly', () => {
     expect(wrapper).toMatchSnapshot();
   })
-  it('should render list 5 anchor', () => {
+  it('should render 5 list menu anchor', () => {
     expect(wrapper.find('li').find('Link').length).toEqual(5);
   })
 })
@@ -58,6 +57,15 @@ describe('<Breadcrumbs />', () => {
   it('renders <Breadcrumbs />', () => {
     expect(wrapper.exists()).toBe(true);
   });
+  it('Check h1 text should be "Admin"', () => {
+    expect(wrapper.find('h1').text()).toBe('Admin');
+  })
+  it('Check list active should be "Data"', () => {
+    expect(wrapper.find('li.active').text()).toBe('Data');
+  });
+  it('Check ol li', () => {
+    expect(wrapper.find('ol').childAt(0).type()).toBe('li');
+  })
 })
 
 describe('<Header />', () => {
@@ -65,6 +73,12 @@ describe('<Header />', () => {
   it('renders <Header />', () => {
     expect(wrapper.exists()).toBe(true);
   });
+  it('List menu should be 2', () => {
+    expect(wrapper.find('.add').length).toEqual(2);
+  })
+  it('Link hasClass add-trigger', () => {
+    expect(wrapper.find('.add-trigger').length).toEqual(2);
+  })
 })
 
 describe('<Dashboard />', () => {
@@ -91,6 +105,13 @@ describe('<NewsAdd />', () => {
 describe('<Member />', () => {
   const wrapper = shallow(<Member />);
   it('renders <Member />', () => {
+    expect(wrapper.exists()).toBe(true);
+  });
+});
+
+describe('<MemberAdd />', () => {
+  const wrapper = shallow(<MemberAdd />);
+  it('renders <MemberAdd />', () => {
     expect(wrapper.exists()).toBe(true);
   });
 });

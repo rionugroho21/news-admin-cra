@@ -1,12 +1,12 @@
 import React from 'react';
-import Option from '../common/Option';
-import DatePicker from "react-datepicker";
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import {bindActionCreators} from 'redux';
+import DatePicker from "react-datepicker";
 import "../../../node_modules/react-datepicker/dist/react-datepicker.css";
 import {startEditingNews, startLoadingNews} from '../../redux/actions/newsActions';
 import {startLoadingCat} from '../../redux/actions/categoryActions';
+import Option from '../common/Option';
 
 class NewsEdit extends React.Component {
     constructor(props){

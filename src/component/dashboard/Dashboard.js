@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import {bindActionCreators} from 'redux';
 import {startLoadingNews} from '../../redux/actions/newsActions';
 import {startLoadComment} from '../../redux/actions/commentActions';
 import {startLoadingMember} from '../../redux/actions/memberActions';
@@ -99,4 +100,8 @@ const mapStateToProps = state => ({
     photo: state.photo
 })
 
-export default connect(mapStateToProps, {startLoadingNews, startLoadingMember, startLoadComment, startLoadPhoto})(Dashboard);
+const mapDispatchToProps = (dispatch) => {
+    return bindActionCreators({startLoadingNews, startLoadingMember, startLoadComment, startLoadPhoto}, dispatch);
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);
