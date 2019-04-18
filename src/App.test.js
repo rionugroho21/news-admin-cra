@@ -37,16 +37,16 @@ describe('<App />', () => {
 
 describe('<Aside />', () => {
   const wrapper = shallow(<Aside />);
-  it('should has .navbar-toggler class', () => {
-    const search = wrapper.find('button');
-    expect(search.hasClass('navbar-toggler')).toBe(true);
-  });
   it('renders <Aside />', () => {
     expect(wrapper.exists()).toBe(true);
   });
   it('renders correctly', () => {
     expect(wrapper).toMatchSnapshot();
   })
+  it('should has .navbar-toggler class', () => {
+    const search = wrapper.find('button');
+    expect(search.hasClass('navbar-toggler')).toBe(true);
+  });
   it('should render 5 list menu anchor', () => {
     expect(wrapper.find('li').find('Link').length).toEqual(5);
   })
@@ -75,9 +75,12 @@ describe('<Header />', () => {
   });
   it('List menu should be 2', () => {
     expect(wrapper.find('.add').length).toEqual(2);
-  })
+  });
   it('Link hasClass add-trigger', () => {
     expect(wrapper.find('.add-trigger').length).toEqual(2);
+  });
+  it('#menuToggle with tag p and class menutoggle', () => {
+    expect(wrapper.find('#menuToggle').hasClass('menutoggle')).toBe(true);
   })
 })
 
@@ -95,9 +98,23 @@ describe('<News />', () => {
   });
 });
 
+describe('<NewsItem />', () => {
+  const wrapper = shallow(<NewsItem />);
+  it('renders <NewsItem />', () => {
+    expect(wrapper.exists()).toBe(true);
+  });
+});
+
 describe('<NewsAdd />', () => {
   const wrapper = shallow(<NewsAdd />);
   it('renders <NewsAdd />', () => {
+    expect(wrapper.exists()).toBe(true);
+  });
+});
+
+describe('<NewsEdit />', () => {
+  const wrapper = shallow(<NewsEdit />);
+  it('renders <NewsEdit />', () => {
     expect(wrapper.exists()).toBe(true);
   });
 });
@@ -112,6 +129,13 @@ describe('<Member />', () => {
 describe('<MemberAdd />', () => {
   const wrapper = shallow(<MemberAdd />);
   it('renders <MemberAdd />', () => {
+    expect(wrapper.exists()).toBe(true);
+  });
+});
+
+describe('<MemberEdit />', () => {
+  const wrapper = shallow(<MemberEdit />);
+  it('renders <MemberEdit />', () => {
     expect(wrapper.exists()).toBe(true);
   });
 });
