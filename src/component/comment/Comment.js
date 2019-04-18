@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import {startLoadTable} from '../../redux/actions/tableActions';
+import {startLoadComment} from '../../redux/actions/commentActions';
 import Loading from '../common/loading/LoadingDots';
 
-class Table extends React.Component{
+class Comment extends React.Component{
     constructor(props){
         super(props);
         this.state = {
@@ -17,7 +17,7 @@ class Table extends React.Component{
     }
 
     componentDidMount(){
-        this.props.startLoadTable();
+        this.props.startLoadComment();
     }
 
     searchHandler = (e) => {
@@ -33,6 +33,7 @@ class Table extends React.Component{
     }
 
     onSort(event, sortKey){
+        event.preventDefault();
         const data = this.props.table.table;
         data.sort((a,b) => a[sortKey].localeCompare(b[sortKey]));
         this.setState({data});
@@ -45,13 +46,13 @@ class Table extends React.Component{
     }
 
     render(){
-        const { table, loading } = this.props.table;
+        const { comment, loading } = this.props.comment;
         const term = this.state.term;
         const option = this.state.option;
 
         if(loading === true){
             return <Loading />
-        }else if(table){
+        }else if(comment){
             return (
                 <div className="animated fadeIn">
                     <div className="row">
@@ -78,23 +79,23 @@ class Table extends React.Component{
                                             <th onClick={e => this.onSort(e, 'name')}>Name</th>
                                             <th onClick={e => this.onSort(e, 'email')}>Email</th>
                                             <th onClick={e => this.onSort(e, 'body')}>Comment</th>
-                                            <th></th>
+                                            {/* <th></th> */}
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {table.filter(this.searchingFor(term, option)).map((data, index) =>
+                                        {comment.filter(this.searchingFor(term, option)).map((data, index) =>
                                             <tr key={index}>
                                                 <td className="bs-checkbox "><input name="btSelectItem" type="checkbox" /></td>
                                                 <td>{data.id}</td>
                                                 <td>{data.name}</td>
                                                 <td>{data.email}</td>
                                                 <td>{data.body}</td>
-                                                <td className="table-wrap">
+                                                {/* <td className="table-wrap">
                                                     <div className="table-button">
                                                         <button className="btn btn-success"><i className="fa fa-pencil-square-o" aria-hidden="true"></i></button>
                                                         <button className="btn btn-danger"><i className="fa fa-trash" aria-hidden="true"></i></button>
                                                     </div>
-                                                </td>
+                                                </td> */}
                                             </tr>
                                         )}
                                     </tbody>
@@ -110,13 +111,13 @@ class Table extends React.Component{
     }
 }
 
-Table.propTypes = {
-    startLoadTable: PropTypes.func.isRequired,
-    table: PropTypes.object.isRequired
+Comment.propTypes = {
+    startLoadComment: PropTypes.func.isRequired,
+    comment: PropTypes.object.isRequired
 }
   
 const mapStateToProps = state => ({
-    table: state.table
+    comment: state.comment
 })
   
-export default connect(mapStateToProps, { startLoadTable })(Table);
+export default connect(mapStateToProps, { startLoadComment })(Comment);

@@ -10,12 +10,12 @@ class Header extends React.Component {
                     <p id="menuToggle" className="menutoggle pull-left"><i className="fa fa fa-tasks"></i></p>
                     <div className="header-left">
                         {/* <button className="search-trigger"><i className="fa fa-search"></i></button> */}
-                        <div className="form-inline">
+                        {/* <div className="form-inline">
                             <form className="search-form">
                                 <input className="form-control mr-sm-2" type="text" placeholder="Search ..." aria-label="Search" />
                                 <button className="search-close" type="submit"><i className="fa fa-close"></i></button>
                             </form>
-                        </div>
+                        </div> */}
                         <div className="add">
                             <Link className="add-trigger" to="/addNews"><i className="fa fa-plus"></i></Link>
                         </div>

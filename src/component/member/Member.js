@@ -53,49 +53,49 @@ class Member extends React.Component{
                                 <div className="card-body card-block">
                                     <form>
                                         <div className="row form-group">
-                                            <div className="col col-md-3"><label className=" form-control-label">Name</label></div>
+                                            <div className="col col-md-3"><label className="form-control-label">Name</label></div>
                                             <div className="col-12 col-md-9">
                                                 <p className="form-control-static">{data.name}</p>
                                             </div>
                                         </div>
                                         <div className="row form-group">
-                                            <div className="col col-md-3"><label className=" form-control-label">Date of Birth</label></div>
+                                            <div className="col col-md-3"><label className="form-control-label">Date of Birth</label></div>
                                             <div className="col-12 col-md-9">
                                                 <p className="form-control-static">{data.dateob.toString()}</p>
                                             </div>
                                         </div>
                                         <div className="row form-group">
-                                            <div className="col col-md-3"><label className=" form-control-label">Email</label></div>
+                                            <div className="col col-md-3"><label className="form-control-label">Email</label></div>
                                             <div className="col-12 col-md-9">
                                                 <p className="form-control-static">{data.email}</p>
                                             </div>
                                         </div>
                                         <div className="row form-group">
-                                            <div className="col col-md-3"><label className=" form-control-label">Phone</label></div>
+                                            <div className="col col-md-3"><label className="form-control-label">Phone</label></div>
                                             <div className="col-12 col-md-9">
                                                 <p className="form-control-static">{data.phone}</p>
                                             </div>
                                         </div>
                                         <div className="row form-group">
-                                            <div className="col col-md-3"><label className=" form-control-label">Sex</label></div>
+                                            <div className="col col-md-3"><label className="form-control-label">Sex</label></div>
                                             <div className="col-12 col-md-9">
                                                 <p className="form-control-static">{data.sex}</p>
                                             </div>
                                         </div>
                                         <div className="row form-group">
-                                            <div className="col col-md-3"><label className=" form-control-label">Country</label></div>
+                                            <div className="col col-md-3"><label className="form-control-label">Country</label></div>
                                             <div className="col-12 col-md-9">
                                                 <p className="form-control-static">{data.country}</p>
                                             </div>
                                         </div>
                                         <div className="row form-group">
-                                            <div className="col col-md-3"><label className=" form-control-label">Zip Code</label></div>
+                                            <div className="col col-md-3"><label className="form-control-label">Zip Code</label></div>
                                             <div className="col-12 col-md-9">
                                                 <p className="form-control-static">{data.zipCode}</p>
                                             </div>
                                         </div>
                                         <div className="row form-group">
-                                            <div className="col col-md-3"><label className=" form-control-label">Address</label></div>
+                                            <div className="col col-md-3"><label className="form-control-label">Address</label></div>
                                             <div className="col-12 col-md-9">
                                                 <p className="form-control-static">{data.address}</p>
                                             </div>

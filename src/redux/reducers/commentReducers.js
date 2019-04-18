@@ -1,25 +1,25 @@
-import {TABLE_LOADING, LOAD_TABLE} from '../types';
+import {COMMENT_LOADING, LOAD_COMMENT} from '../types';
 
 const initialState = {
-    table: [],
+    comment: [],
     loading: false
 }
 
-function table(state = initialState, action) {
+function comment(state = initialState, action) {
     switch (action.type) {
-        case TABLE_LOADING: 
+        case COMMENT_LOADING: 
             return {
                 ...state,
                 loading: true
             }
-        case LOAD_TABLE: 
+        case LOAD_COMMENT: 
             return {
                 ...state,
-                table: action.datas,
+                comment: action.datas,
                 loading: false
             }
         default: return state;
     }
 }
 
-export default table;
+export default comment;

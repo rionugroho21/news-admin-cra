@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import {startLoadingNews} from '../../redux/actions/newsActions';
-import {startLoadTable} from '../../redux/actions/tableActions';
+import {startLoadComment} from '../../redux/actions/commentActions';
 import {startLoadingMember} from '../../redux/actions/memberActions';
 import {startLoadPhoto} from '../../redux/actions/photoActions';
 import LoadingDash from '../common/loading/LoadingDash';
@@ -15,7 +15,7 @@ class Dashboard extends Component{
             this.setState({loading: false});
         });
         this.props.startLoadingMember();
-        this.props.startLoadTable();
+        this.props.startLoadComment();
         this.props.startLoadPhoto(1);
     }
 
@@ -28,7 +28,7 @@ class Dashboard extends Component{
         if (this.state.loading === true && loading === true) {
             return <LoadingDash />
         }else if(news && member && comment && photo){
-            return <div>
+            return <div className="news">
                     <div className="col-sm-6 col-lg-3">
                         <div className="card text-white bg-flat-color-1">
                             <div className="card-body">
@@ -88,15 +88,15 @@ Dashboard.propTypes = {
     photo: PropTypes.object.isRequired,
     startLoadingNews: PropTypes.func.isRequired,
     startLoadingMember: PropTypes.func.isRequired,
-    startLoadTable: PropTypes.func.isRequired,
+    startLoadComment: PropTypes.func.isRequired,
     startLoadPhoto: PropTypes.func.isRequired
 }
 
 const mapStateToProps = state => ({
     news: state.news,
     member: state.member,
-    comment: state.table.table,
+    comment: state.comment.comment,
     photo: state.photo
 })
 
-export default connect(mapStateToProps, {startLoadingNews, startLoadingMember, startLoadTable, startLoadPhoto})(Dashboard);
+export default connect(mapStateToProps, {startLoadingNews, startLoadingMember, startLoadComment, startLoadPhoto})(Dashboard);

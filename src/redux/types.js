@@ -3,8 +3,8 @@ export const LOAD_CATEGORY = 'LOAD_CATEGORY';
 export const PHOTO_LOADING = 'PHOTO_LOADING';
 export const LOAD_PHOTO = 'LOAD_PHOTO';
 
-export const TABLE_LOADING = 'TABLE_LOADING';
-export const LOAD_TABLE = 'LOAD_TABLE';
+export const COMMENT_LOADING = 'COMMENT_LOADING';
+export const LOAD_COMMENT = 'LOAD_COMMENT';
 
 export const LOAD_RATES = 'LOAD_RATES';
 

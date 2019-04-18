@@ -1,0 +1,1404 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Aside /> renders correctly 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Aside />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <nav
+        className="navbar navbar-expand-sm navbar-default"
+      >
+        <div
+          className="navbar-header"
+        >
+          <button
+            aria-controls="main-menu"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+            className="navbar-toggler"
+            data-target="#main-menu"
+            data-toggle="collapse"
+            type="button"
+          >
+            <i
+              className="fa fa-bars"
+            />
+          </button>
+          <Link
+            className="navbar-brand"
+            replace={false}
+            to="/"
+          >
+            <img
+              alt="Logo"
+              src="logo.png"
+            />
+          </Link>
+          <Link
+            className="navbar-brand hidden"
+            replace={false}
+            to="/"
+          >
+            <img
+              alt="Logo"
+              src="logo2.png"
+            />
+          </Link>
+        </div>
+        <div
+          className="main-menu collapse navbar-collapse"
+          id="main-menu"
+        >
+          <ul
+            className="nav navbar-nav"
+          >
+            <li>
+              <Link
+                replace={false}
+                to="/"
+              >
+                <i
+                  className="menu-icon fa fa-dashboard"
+                />
+                Dashboard 
+              </Link>
+              <Link
+                replace={false}
+                to="/news"
+              >
+                <i
+                  className="menu-icon fa fa-newspaper-o"
+                />
+                News 
+              </Link>
+              <Link
+                replace={false}
+                to="/member"
+              >
+                <i
+                  className="menu-icon fa fa-user-circle"
+                />
+                Member 
+              </Link>
+              <Link
+                replace={false}
+                to="/photo"
+              >
+                <i
+                  className="menu-icon fa fa-picture-o"
+                />
+                Photo 
+              </Link>
+              <Link
+                replace={false}
+                to="/comment"
+              >
+                <i
+                  className="menu-icon fa fa-table"
+                />
+                Comment 
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </nav>,
+      "className": "left-panel",
+      "id": "left-panel",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="navbar-header"
+          >
+            <button
+              aria-controls="main-menu"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+              className="navbar-toggler"
+              data-target="#main-menu"
+              data-toggle="collapse"
+              type="button"
+            >
+              <i
+                className="fa fa-bars"
+              />
+            </button>
+            <Link
+              className="navbar-brand"
+              replace={false}
+              to="/"
+            >
+              <img
+                alt="Logo"
+                src="logo.png"
+              />
+            </Link>
+            <Link
+              className="navbar-brand hidden"
+              replace={false}
+              to="/"
+            >
+              <img
+                alt="Logo"
+                src="logo2.png"
+              />
+            </Link>
+          </div>,
+          <div
+            className="main-menu collapse navbar-collapse"
+            id="main-menu"
+          >
+            <ul
+              className="nav navbar-nav"
+            >
+              <li>
+                <Link
+                  replace={false}
+                  to="/"
+                >
+                  <i
+                    className="menu-icon fa fa-dashboard"
+                  />
+                  Dashboard 
+                </Link>
+                <Link
+                  replace={false}
+                  to="/news"
+                >
+                  <i
+                    className="menu-icon fa fa-newspaper-o"
+                  />
+                  News 
+                </Link>
+                <Link
+                  replace={false}
+                  to="/member"
+                >
+                  <i
+                    className="menu-icon fa fa-user-circle"
+                  />
+                  Member 
+                </Link>
+                <Link
+                  replace={false}
+                  to="/photo"
+                >
+                  <i
+                    className="menu-icon fa fa-picture-o"
+                  />
+                  Photo 
+                </Link>
+                <Link
+                  replace={false}
+                  to="/comment"
+                >
+                  <i
+                    className="menu-icon fa fa-table"
+                  />
+                  Comment 
+                </Link>
+              </li>
+            </ul>
+          </div>,
+        ],
+        "className": "navbar navbar-expand-sm navbar-default",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <button
+                aria-controls="main-menu"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+                className="navbar-toggler"
+                data-target="#main-menu"
+                data-toggle="collapse"
+                type="button"
+              >
+                <i
+                  className="fa fa-bars"
+                />
+              </button>,
+              <Link
+                className="navbar-brand"
+                replace={false}
+                to="/"
+              >
+                <img
+                  alt="Logo"
+                  src="logo.png"
+                />
+              </Link>,
+              <Link
+                className="navbar-brand hidden"
+                replace={false}
+                to="/"
+              >
+                <img
+                  alt="Logo"
+                  src="logo2.png"
+                />
+              </Link>,
+            ],
+            "className": "navbar-header",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "aria-controls": "main-menu",
+                "aria-expanded": "false",
+                "aria-label": "Toggle navigation",
+                "children": <i
+                  className="fa fa-bars"
+                />,
+                "className": "navbar-toggler",
+                "data-target": "#main-menu",
+                "data-toggle": "collapse",
+                "type": "button",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "className": "fa fa-bars",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "i",
+              },
+              "type": "button",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": <img
+                  alt="Logo"
+                  src="logo.png"
+                />,
+                "className": "navbar-brand",
+                "replace": false,
+                "to": "/",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "alt": "Logo",
+                  "src": "logo.png",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "img",
+              },
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": <img
+                  alt="Logo"
+                  src="logo2.png"
+                />,
+                "className": "navbar-brand hidden",
+                "replace": false,
+                "to": "/",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "alt": "Logo",
+                  "src": "logo2.png",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "img",
+              },
+              "type": [Function],
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <ul
+              className="nav navbar-nav"
+            >
+              <li>
+                <Link
+                  replace={false}
+                  to="/"
+                >
+                  <i
+                    className="menu-icon fa fa-dashboard"
+                  />
+                  Dashboard 
+                </Link>
+                <Link
+                  replace={false}
+                  to="/news"
+                >
+                  <i
+                    className="menu-icon fa fa-newspaper-o"
+                  />
+                  News 
+                </Link>
+                <Link
+                  replace={false}
+                  to="/member"
+                >
+                  <i
+                    className="menu-icon fa fa-user-circle"
+                  />
+                  Member 
+                </Link>
+                <Link
+                  replace={false}
+                  to="/photo"
+                >
+                  <i
+                    className="menu-icon fa fa-picture-o"
+                  />
+                  Photo 
+                </Link>
+                <Link
+                  replace={false}
+                  to="/comment"
+                >
+                  <i
+                    className="menu-icon fa fa-table"
+                  />
+                  Comment 
+                </Link>
+              </li>
+            </ul>,
+            "className": "main-menu collapse navbar-collapse",
+            "id": "main-menu",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <li>
+                <Link
+                  replace={false}
+                  to="/"
+                >
+                  <i
+                    className="menu-icon fa fa-dashboard"
+                  />
+                  Dashboard 
+                </Link>
+                <Link
+                  replace={false}
+                  to="/news"
+                >
+                  <i
+                    className="menu-icon fa fa-newspaper-o"
+                  />
+                  News 
+                </Link>
+                <Link
+                  replace={false}
+                  to="/member"
+                >
+                  <i
+                    className="menu-icon fa fa-user-circle"
+                  />
+                  Member 
+                </Link>
+                <Link
+                  replace={false}
+                  to="/photo"
+                >
+                  <i
+                    className="menu-icon fa fa-picture-o"
+                  />
+                  Photo 
+                </Link>
+                <Link
+                  replace={false}
+                  to="/comment"
+                >
+                  <i
+                    className="menu-icon fa fa-table"
+                  />
+                  Comment 
+                </Link>
+              </li>,
+              "className": "nav navbar-nav",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <Link
+                    replace={false}
+                    to="/"
+                  >
+                    <i
+                      className="menu-icon fa fa-dashboard"
+                    />
+                    Dashboard 
+                  </Link>,
+                  <Link
+                    replace={false}
+                    to="/news"
+                  >
+                    <i
+                      className="menu-icon fa fa-newspaper-o"
+                    />
+                    News 
+                  </Link>,
+                  <Link
+                    replace={false}
+                    to="/member"
+                  >
+                    <i
+                      className="menu-icon fa fa-user-circle"
+                    />
+                    Member 
+                  </Link>,
+                  <Link
+                    replace={false}
+                    to="/photo"
+                  >
+                    <i
+                      className="menu-icon fa fa-picture-o"
+                    />
+                    Photo 
+                  </Link>,
+                  <Link
+                    replace={false}
+                    to="/comment"
+                  >
+                    <i
+                      className="menu-icon fa fa-table"
+                    />
+                    Comment 
+                  </Link>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": Array [
+                      <i
+                        className="menu-icon fa fa-dashboard"
+                      />,
+                      "Dashboard ",
+                    ],
+                    "replace": false,
+                    "to": "/",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "className": "menu-icon fa fa-dashboard",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": "i",
+                    },
+                    "Dashboard ",
+                  ],
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": Array [
+                      <i
+                        className="menu-icon fa fa-newspaper-o"
+                      />,
+                      "News ",
+                    ],
+                    "replace": false,
+                    "to": "/news",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "className": "menu-icon fa fa-newspaper-o",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": "i",
+                    },
+                    "News ",
+                  ],
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": Array [
+                      <i
+                        className="menu-icon fa fa-user-circle"
+                      />,
+                      "Member ",
+                    ],
+                    "replace": false,
+                    "to": "/member",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "className": "menu-icon fa fa-user-circle",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": "i",
+                    },
+                    "Member ",
+                  ],
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": Array [
+                      <i
+                        className="menu-icon fa fa-picture-o"
+                      />,
+                      "Photo ",
+                    ],
+                    "replace": false,
+                    "to": "/photo",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "className": "menu-icon fa fa-picture-o",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": "i",
+                    },
+                    "Photo ",
+                  ],
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": Array [
+                      <i
+                        className="menu-icon fa fa-table"
+                      />,
+                      "Comment ",
+                    ],
+                    "replace": false,
+                    "to": "/comment",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "className": "menu-icon fa fa-table",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": "i",
+                    },
+                    "Comment ",
+                  ],
+                  "type": [Function],
+                },
+              ],
+              "type": "li",
+            },
+            "type": "ul",
+          },
+          "type": "div",
+        },
+      ],
+      "type": "nav",
+    },
+    "type": "aside",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <nav
+          className="navbar navbar-expand-sm navbar-default"
+        >
+          <div
+            className="navbar-header"
+          >
+            <button
+              aria-controls="main-menu"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+              className="navbar-toggler"
+              data-target="#main-menu"
+              data-toggle="collapse"
+              type="button"
+            >
+              <i
+                className="fa fa-bars"
+              />
+            </button>
+            <Link
+              className="navbar-brand"
+              replace={false}
+              to="/"
+            >
+              <img
+                alt="Logo"
+                src="logo.png"
+              />
+            </Link>
+            <Link
+              className="navbar-brand hidden"
+              replace={false}
+              to="/"
+            >
+              <img
+                alt="Logo"
+                src="logo2.png"
+              />
+            </Link>
+          </div>
+          <div
+            className="main-menu collapse navbar-collapse"
+            id="main-menu"
+          >
+            <ul
+              className="nav navbar-nav"
+            >
+              <li>
+                <Link
+                  replace={false}
+                  to="/"
+                >
+                  <i
+                    className="menu-icon fa fa-dashboard"
+                  />
+                  Dashboard 
+                </Link>
+                <Link
+                  replace={false}
+                  to="/news"
+                >
+                  <i
+                    className="menu-icon fa fa-newspaper-o"
+                  />
+                  News 
+                </Link>
+                <Link
+                  replace={false}
+                  to="/member"
+                >
+                  <i
+                    className="menu-icon fa fa-user-circle"
+                  />
+                  Member 
+                </Link>
+                <Link
+                  replace={false}
+                  to="/photo"
+                >
+                  <i
+                    className="menu-icon fa fa-picture-o"
+                  />
+                  Photo 
+                </Link>
+                <Link
+                  replace={false}
+                  to="/comment"
+                >
+                  <i
+                    className="menu-icon fa fa-table"
+                  />
+                  Comment 
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </nav>,
+        "className": "left-panel",
+        "id": "left-panel",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div
+              className="navbar-header"
+            >
+              <button
+                aria-controls="main-menu"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+                className="navbar-toggler"
+                data-target="#main-menu"
+                data-toggle="collapse"
+                type="button"
+              >
+                <i
+                  className="fa fa-bars"
+                />
+              </button>
+              <Link
+                className="navbar-brand"
+                replace={false}
+                to="/"
+              >
+                <img
+                  alt="Logo"
+                  src="logo.png"
+                />
+              </Link>
+              <Link
+                className="navbar-brand hidden"
+                replace={false}
+                to="/"
+              >
+                <img
+                  alt="Logo"
+                  src="logo2.png"
+                />
+              </Link>
+            </div>,
+            <div
+              className="main-menu collapse navbar-collapse"
+              id="main-menu"
+            >
+              <ul
+                className="nav navbar-nav"
+              >
+                <li>
+                  <Link
+                    replace={false}
+                    to="/"
+                  >
+                    <i
+                      className="menu-icon fa fa-dashboard"
+                    />
+                    Dashboard 
+                  </Link>
+                  <Link
+                    replace={false}
+                    to="/news"
+                  >
+                    <i
+                      className="menu-icon fa fa-newspaper-o"
+                    />
+                    News 
+                  </Link>
+                  <Link
+                    replace={false}
+                    to="/member"
+                  >
+                    <i
+                      className="menu-icon fa fa-user-circle"
+                    />
+                    Member 
+                  </Link>
+                  <Link
+                    replace={false}
+                    to="/photo"
+                  >
+                    <i
+                      className="menu-icon fa fa-picture-o"
+                    />
+                    Photo 
+                  </Link>
+                  <Link
+                    replace={false}
+                    to="/comment"
+                  >
+                    <i
+                      className="menu-icon fa fa-table"
+                    />
+                    Comment 
+                  </Link>
+                </li>
+              </ul>
+            </div>,
+          ],
+          "className": "navbar navbar-expand-sm navbar-default",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <button
+                  aria-controls="main-menu"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation"
+                  className="navbar-toggler"
+                  data-target="#main-menu"
+                  data-toggle="collapse"
+                  type="button"
+                >
+                  <i
+                    className="fa fa-bars"
+                  />
+                </button>,
+                <Link
+                  className="navbar-brand"
+                  replace={false}
+                  to="/"
+                >
+                  <img
+                    alt="Logo"
+                    src="logo.png"
+                  />
+                </Link>,
+                <Link
+                  className="navbar-brand hidden"
+                  replace={false}
+                  to="/"
+                >
+                  <img
+                    alt="Logo"
+                    src="logo2.png"
+                  />
+                </Link>,
+              ],
+              "className": "navbar-header",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "aria-controls": "main-menu",
+                  "aria-expanded": "false",
+                  "aria-label": "Toggle navigation",
+                  "children": <i
+                    className="fa fa-bars"
+                  />,
+                  "className": "navbar-toggler",
+                  "data-target": "#main-menu",
+                  "data-toggle": "collapse",
+                  "type": "button",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "fa fa-bars",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "i",
+                },
+                "type": "button",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": <img
+                    alt="Logo"
+                    src="logo.png"
+                  />,
+                  "className": "navbar-brand",
+                  "replace": false,
+                  "to": "/",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "alt": "Logo",
+                    "src": "logo.png",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "img",
+                },
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": <img
+                    alt="Logo"
+                    src="logo2.png"
+                  />,
+                  "className": "navbar-brand hidden",
+                  "replace": false,
+                  "to": "/",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "alt": "Logo",
+                    "src": "logo2.png",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "img",
+                },
+                "type": [Function],
+              },
+            ],
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <ul
+                className="nav navbar-nav"
+              >
+                <li>
+                  <Link
+                    replace={false}
+                    to="/"
+                  >
+                    <i
+                      className="menu-icon fa fa-dashboard"
+                    />
+                    Dashboard 
+                  </Link>
+                  <Link
+                    replace={false}
+                    to="/news"
+                  >
+                    <i
+                      className="menu-icon fa fa-newspaper-o"
+                    />
+                    News 
+                  </Link>
+                  <Link
+                    replace={false}
+                    to="/member"
+                  >
+                    <i
+                      className="menu-icon fa fa-user-circle"
+                    />
+                    Member 
+                  </Link>
+                  <Link
+                    replace={false}
+                    to="/photo"
+                  >
+                    <i
+                      className="menu-icon fa fa-picture-o"
+                    />
+                    Photo 
+                  </Link>
+                  <Link
+                    replace={false}
+                    to="/comment"
+                  >
+                    <i
+                      className="menu-icon fa fa-table"
+                    />
+                    Comment 
+                  </Link>
+                </li>
+              </ul>,
+              "className": "main-menu collapse navbar-collapse",
+              "id": "main-menu",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <li>
+                  <Link
+                    replace={false}
+                    to="/"
+                  >
+                    <i
+                      className="menu-icon fa fa-dashboard"
+                    />
+                    Dashboard 
+                  </Link>
+                  <Link
+                    replace={false}
+                    to="/news"
+                  >
+                    <i
+                      className="menu-icon fa fa-newspaper-o"
+                    />
+                    News 
+                  </Link>
+                  <Link
+                    replace={false}
+                    to="/member"
+                  >
+                    <i
+                      className="menu-icon fa fa-user-circle"
+                    />
+                    Member 
+                  </Link>
+                  <Link
+                    replace={false}
+                    to="/photo"
+                  >
+                    <i
+                      className="menu-icon fa fa-picture-o"
+                    />
+                    Photo 
+                  </Link>
+                  <Link
+                    replace={false}
+                    to="/comment"
+                  >
+                    <i
+                      className="menu-icon fa fa-table"
+                    />
+                    Comment 
+                  </Link>
+                </li>,
+                "className": "nav navbar-nav",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <Link
+                      replace={false}
+                      to="/"
+                    >
+                      <i
+                        className="menu-icon fa fa-dashboard"
+                      />
+                      Dashboard 
+                    </Link>,
+                    <Link
+                      replace={false}
+                      to="/news"
+                    >
+                      <i
+                        className="menu-icon fa fa-newspaper-o"
+                      />
+                      News 
+                    </Link>,
+                    <Link
+                      replace={false}
+                      to="/member"
+                    >
+                      <i
+                        className="menu-icon fa fa-user-circle"
+                      />
+                      Member 
+                    </Link>,
+                    <Link
+                      replace={false}
+                      to="/photo"
+                    >
+                      <i
+                        className="menu-icon fa fa-picture-o"
+                      />
+                      Photo 
+                    </Link>,
+                    <Link
+                      replace={false}
+                      to="/comment"
+                    >
+                      <i
+                        className="menu-icon fa fa-table"
+                      />
+                      Comment 
+                    </Link>,
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": Array [
+                        <i
+                          className="menu-icon fa fa-dashboard"
+                        />,
+                        "Dashboard ",
+                      ],
+                      "replace": false,
+                      "to": "/",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "className": "menu-icon fa fa-dashboard",
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": "i",
+                      },
+                      "Dashboard ",
+                    ],
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": Array [
+                        <i
+                          className="menu-icon fa fa-newspaper-o"
+                        />,
+                        "News ",
+                      ],
+                      "replace": false,
+                      "to": "/news",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "className": "menu-icon fa fa-newspaper-o",
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": "i",
+                      },
+                      "News ",
+                    ],
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": Array [
+                        <i
+                          className="menu-icon fa fa-user-circle"
+                        />,
+                        "Member ",
+                      ],
+                      "replace": false,
+                      "to": "/member",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "className": "menu-icon fa fa-user-circle",
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": "i",
+                      },
+                      "Member ",
+                    ],
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": Array [
+                        <i
+                          className="menu-icon fa fa-picture-o"
+                        />,
+                        "Photo ",
+                      ],
+                      "replace": false,
+                      "to": "/photo",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "className": "menu-icon fa fa-picture-o",
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": "i",
+                      },
+                      "Photo ",
+                    ],
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": Array [
+                        <i
+                          className="menu-icon fa fa-table"
+                        />,
+                        "Comment ",
+                      ],
+                      "replace": false,
+                      "to": "/comment",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "className": "menu-icon fa fa-table",
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": "i",
+                      },
+                      "Comment ",
+                    ],
+                    "type": [Function],
+                  },
+                ],
+                "type": "li",
+              },
+              "type": "ul",
+            },
+            "type": "div",
+          },
+        ],
+        "type": "nav",
+      },
+      "type": "aside",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+  Symbol(enzyme.__childContext__): null,
+}
+`;

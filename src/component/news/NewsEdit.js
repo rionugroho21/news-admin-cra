@@ -141,11 +141,11 @@ class NewsEdit extends React.Component {
                         <form onSubmit={this.handleSubmit}>
                             <input type="hidden" name="id" value={this.state.id}/>
                             <div className="form-group">
-                                <label htmlFor="nf-image" className=" form-control-label">Image</label>
+                                <label htmlFor="nf-image" className="form-control-label">Image</label>
                                 <input type="text" id="nf-image" name="imageLink" className="form-control" value={this.state.imageLink} onChange={this.handlechange} />
                             </div>
                             <div className="form-group">
-                                <label htmlFor="nf-title" className=" form-control-label">Title</label>
+                                <label htmlFor="nf-title" className="form-control-label">Title</label>
                                 <input type="text" id="nf-title" name="title" className="form-control" value={this.state.title} onChange={this.handlechange} />
                             </div>
                             <div className="form-group">
@@ -160,7 +160,7 @@ class NewsEdit extends React.Component {
                                 />
                             </div>
                             <div className="form-group">
-                                <label htmlFor="nf-cat" className=" form-control-label">Category</label>
+                                <label htmlFor="nf-cat" className="form-control-label">Category</label>
                                 <Option id="nf-cat" className="form-control option-category" name="category" value={this.state.category} onChange={this.handlechange} {...this.props} />
                             </div>
                             <div className="form-group">
@@ -173,7 +173,7 @@ class NewsEdit extends React.Component {
                                 <label className="radio-inline"><input type="radio" name="writer" checked={this.state.writer === "Guest"} value="Guest" onChange={this.handlechange} /> Guest</label>
                             </div>
                             <div className="form-group">
-                                <label htmlFor="nf-content" className=" form-control-label">Content</label>
+                                <label htmlFor="nf-content" className="form-control-label">Content</label>
                                 <textarea type="text" id="nf-content" name="content" placeholder="" className="form-control" rows="5" value={this.state.content} onChange={this.handlechange} />
                             </div>
                             <button type="submit" className="btn btn-primary btn-sm">
