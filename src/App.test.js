@@ -40,7 +40,7 @@ describe('<Aside />', () => {
   it('renders <Aside />', () => {
     expect(wrapper.exists()).toBe(true);
   });
-  it('renders correctly', () => {
+  it('renders <Aside /> correctly', () => {
     expect(wrapper).toMatchSnapshot();
   })
   it('should has .navbar-toggler class', () => {
@@ -57,6 +57,9 @@ describe('<Breadcrumbs />', () => {
   it('renders <Breadcrumbs />', () => {
     expect(wrapper.exists()).toBe(true);
   });
+  it('renders <Breadcrumbs /> correctly', () => {
+    expect(wrapper).toMatchSnapshot();
+  })
   it('Check h1 text should be "Admin"', () => {
     expect(wrapper.find('h1').text()).toBe('Admin');
   })
@@ -73,6 +76,9 @@ describe('<Header />', () => {
   it('renders <Header />', () => {
     expect(wrapper.exists()).toBe(true);
   });
+  it('renders <Header /> correctly', () => {
+    expect(wrapper).toMatchSnapshot();
+  })
   it('List menu should be 2', () => {
     expect(wrapper.find('.add').length).toEqual(2);
   });
