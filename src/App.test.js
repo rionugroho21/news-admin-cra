@@ -1,8 +1,5 @@
 import React from 'react';
-import Enzyme, {shallow, mount, render} from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-import configureStore from 'redux-mock-store';
-Enzyme.configure({adapter: new Adapter()});
+import {shallow, mount, render} from 'enzyme';
 
 //Component
 import App from './App';
@@ -26,8 +23,16 @@ import Photo from './component/photo/Photo';
 //Comment
 import Comment from './component/comment/Comment';
 
+import { LOAD_PHOTO, PHOTO_LOADING, LOAD_COMMENT, COMMENT_LOADING } from './redux/types';
 //Action
 import { startLoadingNews } from './redux/actions/newsActions';
+//Reducer
+import photoReducer from './redux/reducers/photoReducers';
+import commentReducer from './redux/reducers/commentReducers';
+import categoryReducer from './redux/reducers/categoryReducers';
+import countryReducer from './redux/reducers/countryReducers';
+import newsReducer from './redux/reducers/newsReducers';
+import memberReducer from './redux/reducers/memberReducers';
 
 describe('<App />', () => {
   it('renders App without crashing', () => {
@@ -42,6 +47,9 @@ describe('<Aside />', () => {
   });
   it('renders <Aside /> correctly', () => {
     expect(wrapper).toMatchSnapshot();
+  })
+  it('Should has #left-panel ID', () => {
+    expect(wrapper.find('#left-panel').length).toEqual(1);
   })
   it('should has .navbar-toggler class', () => {
     const search = wrapper.find('button');
@@ -153,9 +161,87 @@ describe('<Photo />', () => {
   });
 });
 
+describe('<Photo /> Reducer', () => {
+  it('Should return default state', () => {
+    const newState = photoReducer(undefined, {});
+    expect(newState).toEqual({"loading": false, "photo": []});
+  });
+  it('Should return new state if receiving type LOAD_PHOTO', () => {
+    const initialState = {
+      photo: [],
+      loading: false
+    }
+    let state = {};
+    const posts = {
+      loading: false, 
+      photo: undefined
+    };
+    const newState = photoReducer(state = initialState, {
+      type: LOAD_PHOTO,
+      posts 
+    });
+    expect(newState).toEqual(posts); 
+  });
+  it('Should return new state if receiving type PHOTO_LOADING', () => {
+    const initialState = {
+      photo: [],
+      loading: false
+    }
+    let state = {};
+    const posts = {
+      loading: true, 
+      photo: []
+    };
+    const newState = photoReducer(state = initialState, {
+      type: PHOTO_LOADING,
+      posts 
+    });
+    expect(newState).toEqual(posts); 
+  });
+});
+
 describe('<Comment />', () => {
   const wrapper = shallow(<Comment />);
   it('renders <Comment />', () => {
     expect(wrapper.exists()).toBe(true);
+  });
+});
+
+describe('<Comment /> Reducer', () => {
+  it('Should return default state', () => {
+    const newState = commentReducer(undefined, {});
+    expect(newState).toEqual({"loading": false, "comment": []});
+  });
+  it('Should return new state if receiving type LOAD_COMMENT', () => {
+    const initialState = {
+      comment: [],
+      loading: false
+    }
+    let state = {};
+    const posts = {
+      loading: false, 
+      comment: undefined
+    };
+    const newState = commentReducer(state = initialState, {
+      type: LOAD_COMMENT,
+      posts 
+    });
+    expect(newState).toEqual(posts); 
+  });
+  it('Should return new state if receiving type COMMENT_LOADING', () => {
+    const initialState = {
+      comment: [],
+      loading: false
+    }
+    let state = {};
+    const posts = {
+      loading: true, 
+      comment: []
+    };
+    const newState = commentReducer(state = initialState, {
+      type: COMMENT_LOADING,
+      posts 
+    });
+    expect(newState).toEqual(posts); 
   });
 });
