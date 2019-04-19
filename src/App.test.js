@@ -1,5 +1,10 @@
 import React from 'react';
 import {shallow, mount, render} from 'enzyme';
+import { Provider } from "react-redux";
+import configureMockStore from "redux-mock-store";
+
+const mockStore = configureMockStore();
+const store = mockStore({});
 
 //Component
 import App from './App';
@@ -124,6 +129,15 @@ describe('<NewsAdd />', () => {
   it('renders <NewsAdd />', () => {
     expect(wrapper.exists()).toBe(true);
   });
+  // it('should render without throwing an error', () => {
+  //   //expect(wrapper.html()).toEqual('<div></div>');
+  //   expect(
+  //     shallow(
+  //         <Provider store={store}>
+  //             <NewsAdd />
+  //         </Provider>
+  //     ).html()).toEqual('<div></div>');
+  // });
 });
 
 describe('<NewsEdit />', () => {
@@ -156,8 +170,16 @@ describe('<MemberEdit />', () => {
 
 describe('<Photo />', () => {
   const wrapper = shallow(<Photo />);
+  const photo = {
+    loading: false, 
+    photo: undefined
+  };
+  const storeWrapper = shallow(<Provider store={store}><Photo {...photo}/></Provider>);
   it('renders <Photo />', () => {
     expect(wrapper.exists()).toBe(true);
+  });
+  it('should render without throwing an error', () => {
+    expect(storeWrapper).toMatchSnapshot();
   });
 });
 
@@ -202,8 +224,16 @@ describe('<Photo /> Reducer', () => {
 
 describe('<Comment />', () => {
   const wrapper = shallow(<Comment />);
+  const comment = {
+    loading: false, 
+    comment: undefined
+  };
+  const storeWrapper = shallow(<Provider store={store}><Comment {...comment}/></Provider>);
   it('renders <Comment />', () => {
     expect(wrapper.exists()).toBe(true);
+  });
+  it('should render without throwing an error', () => {
+    expect(storeWrapper).toMatchSnapshot();
   });
 });
 
