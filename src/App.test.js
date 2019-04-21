@@ -28,7 +28,7 @@ import Photo from './component/photo/Photo';
 //Comment
 import Comment from './component/comment/Comment';
 
-import { LOAD_PHOTO, PHOTO_LOADING, LOAD_COMMENT, COMMENT_LOADING } from './redux/types';
+import { LOAD_PHOTO, PHOTO_LOADING, LOAD_COMMENT, COMMENT_LOADING, LOAD_CATEGORY, LOAD_RATES } from './redux/types';
 //Action
 import { startLoadingNews } from './redux/actions/newsActions';
 //Reducer
@@ -273,5 +273,35 @@ describe('<Comment /> Reducer', () => {
       posts 
     });
     expect(newState).toEqual(posts); 
+  });
+});
+
+describe('Category Reducer', () => {
+  it('Should return default state', () => {
+    const newState = categoryReducer(undefined, {});
+    expect(newState).toEqual([]);
+  });
+  it('Should return new state if receiving type LOAD_CATEGORY', () => {
+    const posts = [];
+    const newState = categoryReducer(undefined, {
+      type: LOAD_CATEGORY,
+      posts 
+    });
+    expect(newState).toEqual(undefined); 
+  });
+});
+
+describe('Country Reducer', () => {
+  it('Should return default state', () => {
+    const newState = countryReducer(undefined, {});
+    expect(newState).toEqual([]);
+  });
+  it('Should return new state if receiving type LOAD_RATES', () => {
+    const posts = [];
+    const newState = countryReducer(undefined, {
+      type: LOAD_RATES,
+      posts 
+    });
+    expect(newState).toEqual(undefined); 
   });
 });
