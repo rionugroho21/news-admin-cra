@@ -2,9 +2,14 @@ import React from 'react';
 import {shallow, mount, render} from 'enzyme';
 import { Provider } from "react-redux";
 import configureMockStore from "redux-mock-store";
+import thunk from 'redux-thunk'
 import axios from 'axios';
 
-const mockStore = configureMockStore();
+// const mockStore = configureMockStore();
+// const store = mockStore({});
+
+const middlewares = [thunk]
+const mockStore = configureMockStore(middlewares)
 const store = mockStore({});
 
 //Component
@@ -163,7 +168,7 @@ describe('<News /> Actions', () => {
     }
     expect(loadDatas(news)).toEqual(expectedAction);
   })
-  it('Áctions addNews', () => {
+  it('Áctions addNews should return type ADD_NEWS and same datas', () => {
     let post = [];
     const expectedAction = {
       type: ADD_NEWS,
@@ -171,7 +176,7 @@ describe('<News /> Actions', () => {
     }
     expect(addPost(post)).toEqual(expectedAction);
   })
-  it('Áctions editNews', () => {
+  it('Áctions editNews should return type EDIT_NEWS and same datas', () => {
     let post = [];
     const expectedAction = {
       type: EDIT_NEWS,
@@ -179,7 +184,7 @@ describe('<News /> Actions', () => {
     }
     expect(editPost(post)).toEqual(expectedAction);
   })
-  it('Áctions removeNews', () => {
+  it('Áctions removeNews should return type REMOVE_NEWS and same datas', () => {
     let index = [];
     const expectedAction = {
       type: REMOVE_NEWS,
@@ -258,7 +263,7 @@ describe('<Member /> Actions', () => {
     }
     expect(loadMember(datas)).toEqual(expectedAction);
   })
-  it('Áctions addMember', () => {
+  it('Áctions addMember should return type ADD_MEMBER and same datas', () => {
     let post = [];
     const expectedAction = {
       type: ADD_MEMBER,
@@ -266,7 +271,7 @@ describe('<Member /> Actions', () => {
     }
     expect(addMember(post)).toEqual(expectedAction);
   })
-  it('Áctions editMember', () => {
+  it('Áctions editMember should return type EDIT_MEMBER and same datas', () => {
     let post = [];
     const expectedAction = {
       type: EDIT_MEMBER,
@@ -274,7 +279,7 @@ describe('<Member /> Actions', () => {
     }
     expect(editMember(post)).toEqual(expectedAction);
   })
-  it('Áctions removeMember', () => {
+  it('Áctions removeMember should return type REMOVE_MEMBER and same datas', () => {
     let index = [];
     const expectedAction = {
       type: REMOVE_MEMBER,
