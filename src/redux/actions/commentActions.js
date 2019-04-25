@@ -3,7 +3,7 @@ import {COMMENT_LOADING, LOAD_COMMENT} from '../types';
 
 export const startLoadComment = () => dispatch => {
     dispatch(setCommentLoading());
-    axios.get('https://jsonplaceholder.typicode.com/comments')
+    return axios.get('https://jsonplaceholder.typicode.com/comments')
     .then(res => {
         let datas = res.data;
         dispatch(loadComment(datas));
@@ -19,7 +19,6 @@ export const loadComment = (datas) => {
     }
 }
 
-// Profile loading
 export const setCommentLoading = () => {
     return {
         type: COMMENT_LOADING

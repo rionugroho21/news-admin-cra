@@ -3,7 +3,7 @@ import {PHOTO_LOADING, LOAD_PHOTO} from '../types';
 
 export const startLoadPhoto = (id) => dispatch => {
     dispatch(setPhotoLoading());
-    axios.get('https://jsonplaceholder.typicode.com/photos', {
+    return axios.get('https://jsonplaceholder.typicode.com/photos', {
         params: {
             albumId: id
         }
@@ -23,7 +23,6 @@ export const loadPhoto = (datas) => {
     }
 }
 
-// Profile loading
 export const setPhotoLoading = () => {
     return {
         type: PHOTO_LOADING

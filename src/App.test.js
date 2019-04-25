@@ -2,11 +2,14 @@ import React from 'react';
 import {shallow, mount, render} from 'enzyme';
 import { Provider } from "react-redux";
 import configureMockStore from "redux-mock-store";
-import thunk from 'redux-thunk'
-import axios from 'axios';
+import thunk from 'redux-thunk';
+import moxios from 'moxios';
+import expect from 'expect';
 
-// const mockStore = configureMockStore();
-// const store = mockStore({});
+//import axios from "axios";
+//import mockAxios from 'jest-mock-axios';
+//import MockAdapter from 'axios-mock-adapter';
+//import chatbot from './chatbot';
 
 const middlewares = [thunk]
 const mockStore = configureMockStore(middlewares)
@@ -34,14 +37,13 @@ import Photo from './component/photo/Photo';
 //Comment
 import Comment from './component/comment/Comment';
 
-import { LOAD_MEMBER, ADD_MEMBER, EDIT_MEMBER, REMOVE_MEMBER, LOAD_NEWS, ADD_NEWS, EDIT_NEWS, REMOVE_NEWS, LOAD_PHOTO, PHOTO_LOADING, LOAD_COMMENT, COMMENT_LOADING, LOAD_CATEGORY, LOAD_RATES } from './redux/types';
+import * as types from './redux/types';
 //Action
-import { loadDatas, addPost, editPost, removePost } from './redux/actions/newsActions';
-import { loadMember, addMember, editMember, removeMember } from './redux/actions/memberActions';
-import { loadCategory } from './redux/actions/categoryActions';
-import { loadComment, setCommentLoading } from './redux/actions/commentActions';
-import { loadPhoto, setPhotoLoading } from './redux/actions/photoActions';
-//import { loadRates, startLoadingRates } from './redux/actions/countryActions';
+import * as newsActions from './redux/actions/newsActions';
+import * as memberActions from './redux/actions/memberActions';
+import * as categoryActions from './redux/actions/categoryActions';
+import * as commentActions from './redux/actions/commentActions';
+import * as photoActions from './redux/actions/photoActions';
 
 //Reducer
 import photoReducer from './redux/reducers/photoReducers';
@@ -49,7 +51,6 @@ import commentReducer from './redux/reducers/commentReducers';
 import categoryReducer from './redux/reducers/categoryReducers';
 import newsReducer from './redux/reducers/newsReducers';
 import memberReducer from './redux/reducers/memberReducers';
-//import countryReducer from './redux/reducers/countryReducers';
 
 describe('<App />', () => {
   it('renders App without crashing', () => {
@@ -163,34 +164,34 @@ describe('<News /> Actions', () => {
   it('Actions loadNews should return type LOAD_NEWS and same datas', () => {
     let news = [];
     const expectedAction = {
-      type: LOAD_NEWS,
+      type: types.LOAD_NEWS,
       news
     }
-    expect(loadDatas(news)).toEqual(expectedAction);
+    expect(newsActions.loadDatas(news)).toEqual(expectedAction);
   })
   it('Áctions addNews should return type ADD_NEWS and same datas', () => {
     let post = [];
     const expectedAction = {
-      type: ADD_NEWS,
+      type: types.ADD_NEWS,
       post
     }
-    expect(addPost(post)).toEqual(expectedAction);
+    expect(newsActions.addPost(post)).toEqual(expectedAction);
   })
   it('Áctions editNews should return type EDIT_NEWS and same datas', () => {
     let post = [];
     const expectedAction = {
-      type: EDIT_NEWS,
+      type: types.EDIT_NEWS,
       post
     }
-    expect(editPost(post)).toEqual(expectedAction);
+    expect(newsActions.editPost(post)).toEqual(expectedAction);
   })
   it('Áctions removeNews should return type REMOVE_NEWS and same datas', () => {
     let index = [];
     const expectedAction = {
-      type: REMOVE_NEWS,
+      type: types.REMOVE_NEWS,
       index
     }
-    expect(removePost(index)).toEqual(expectedAction);
+    expect(newsActions.removePost(index)).toEqual(expectedAction);
   })
 })
 
@@ -202,7 +203,7 @@ describe('<News /> Reducer', () => {
   it('Should return new state if receiving type LOAD_NEWS', () => {
     const news = [];
     const newState = newsReducer(undefined, {
-      type: LOAD_NEWS,
+      type: types.LOAD_NEWS,
       news 
     });
     expect(newState).toEqual(news); 
@@ -210,7 +211,7 @@ describe('<News /> Reducer', () => {
   it('Should return new state if receiving type ADD_NEWS', () => {
     const post = [];
     const newState = newsReducer(undefined, {
-      type: ADD_NEWS,
+      type: types.ADD_NEWS,
       post 
     });
     expect(newState).toEqual([post]); 
@@ -218,7 +219,7 @@ describe('<News /> Reducer', () => {
   it('Should return new state if receiving type EDIT_NEWS', () => {
     const post = [];
     const newState = newsReducer(undefined, {
-      type: EDIT_NEWS,
+      type: types.EDIT_NEWS,
       post 
     });
     expect(newState).toEqual([post]); 
@@ -226,7 +227,7 @@ describe('<News /> Reducer', () => {
   it('Should return new state if receiving type REMOVE_NEWS', () => {
     const index = [];
     const newState = newsReducer(undefined, {
-      type: REMOVE_NEWS,
+      type: types.REMOVE_NEWS,
       index 
     });
     expect(newState).toEqual(index); 
@@ -258,34 +259,34 @@ describe('<Member /> Actions', () => {
   it('Actions loadMember should return type LOAD_MEMBER and same datas', () => {
     let datas = [];
     const expectedAction = {
-      type: LOAD_MEMBER,
+      type: types.LOAD_MEMBER,
       datas
     }
-    expect(loadMember(datas)).toEqual(expectedAction);
+    expect(memberActions.loadMember(datas)).toEqual(expectedAction);
   })
   it('Áctions addMember should return type ADD_MEMBER and same datas', () => {
     let post = [];
     const expectedAction = {
-      type: ADD_MEMBER,
+      type: types.ADD_MEMBER,
       post
     }
-    expect(addMember(post)).toEqual(expectedAction);
+    expect(memberActions.addMember(post)).toEqual(expectedAction);
   })
   it('Áctions editMember should return type EDIT_MEMBER and same datas', () => {
     let post = [];
     const expectedAction = {
-      type: EDIT_MEMBER,
+      type: types.EDIT_MEMBER,
       post
     }
-    expect(editMember(post)).toEqual(expectedAction);
+    expect(memberActions.editMember(post)).toEqual(expectedAction);
   })
   it('Áctions removeMember should return type REMOVE_MEMBER and same datas', () => {
     let index = [];
     const expectedAction = {
-      type: REMOVE_MEMBER,
+      type: types.REMOVE_MEMBER,
       index
     }
-    expect(removeMember(index)).toEqual(expectedAction);
+    expect(memberActions.removeMember(index)).toEqual(expectedAction);
   })
 })
 
@@ -297,7 +298,7 @@ describe('<Member /> Reducer', () => {
   it('Should return new state if receiving type LOAD_MEMBER', () => {
     const datas = [];
     const newState = memberReducer(undefined, {
-      type: LOAD_MEMBER,
+      type: types.LOAD_MEMBER,
       datas 
     });
     expect(newState).toEqual(datas); 
@@ -305,7 +306,7 @@ describe('<Member /> Reducer', () => {
   it('Should return new state if receiving type ADD_MEMBER', () => {
     const post = [];
     const newState = memberReducer(undefined, {
-      type: ADD_MEMBER,
+      type: types.ADD_MEMBER,
       post 
     });
     expect(newState).toEqual([post]); 
@@ -313,7 +314,7 @@ describe('<Member /> Reducer', () => {
   it('Should return new state if receiving type EDIT_MEMBER', () => {
     const post = [];
     const newState = memberReducer(undefined, {
-      type: EDIT_MEMBER,
+      type: types.EDIT_MEMBER,
       post 
     });
     expect(newState).toEqual([post]); 
@@ -321,7 +322,7 @@ describe('<Member /> Reducer', () => {
   it('Should return new state if receiving type REMOVE_MEMBER', () => {
     const index = [];
     const newState = memberReducer(undefined, {
-      type: REMOVE_MEMBER,
+      type: types.REMOVE_MEMBER,
       index 
     });
     expect(newState).toEqual(index); 
@@ -353,16 +354,50 @@ describe('<Photo /> Actions', () => {
       thumbnailUrl: 'https://via.placeholder.com/150/92c952'
     }];
     const expectedAction = {
-      type: LOAD_PHOTO,
+      type: types.LOAD_PHOTO,
       datas
     }
-    expect(loadPhoto(datas)).toEqual(expectedAction);
+    expect(photoActions.loadPhoto(datas)).toEqual(expectedAction);
   })
   it('Actions should return type PHOTO_LOADING', () => {
 
-    expect(setPhotoLoading()).toEqual({"type": "PHOTO_LOADING"});
-  })
+    expect(photoActions.setPhotoLoading()).toEqual({"type": "PHOTO_LOADING"});
+  });
 })
+
+describe('startLoadPhoto Actions', () => {
+  beforeEach(function () {
+    moxios.install();
+  });
+  afterEach(function () {
+    moxios.uninstall();
+  });
+  it('creates LOAD_PHOTO after successfuly fetching data', () => {
+    moxios.wait(() => {
+      const request = moxios.requests.mostRecent();
+      request.respondWith({
+        status: 200,
+        response: {photo: [], loading: false},
+      });
+    });
+    const expectedActions = [
+      {
+        type: types.PHOTO_LOADING
+      },
+      {
+        datas: {
+          photo: [], 
+          loading: false
+        }, 
+        type: types.LOAD_PHOTO
+      }
+    ];
+    const store = mockStore({ datas: {} })
+    return store.dispatch(photoActions.startLoadPhoto(1)).then(() => {
+      expect(store.getActions()).toEqual(expectedActions);
+    });
+  });
+});
 
 describe('<Photo /> Reducer', () => {
   it('Should return default state', () => {
@@ -380,7 +415,7 @@ describe('<Photo /> Reducer', () => {
       photo: undefined
     };
     const newState = photoReducer(state = initialState, {
-      type: LOAD_PHOTO,
+      type: types.LOAD_PHOTO,
       posts 
     });
     expect(newState).toEqual(posts); 
@@ -396,7 +431,7 @@ describe('<Photo /> Reducer', () => {
       photo: []
     };
     const newState = photoReducer(state = initialState, {
-      type: PHOTO_LOADING,
+      type: types.PHOTO_LOADING,
       posts 
     });
     expect(newState).toEqual(posts); 
@@ -428,16 +463,50 @@ describe('<Comment /> Actions', () => {
       body: 'laudantium enim quasi est quidem magnam voluptate ipsam eos\ntempora quo necessitatibus\ndolor quam autem quasi\nreiciendis et nam sapiente accusantium'
     }];
     const expectedAction = {
-      type: LOAD_COMMENT,
+      type: types.LOAD_COMMENT,
       datas
     }
-    expect(loadComment(datas)).toEqual(expectedAction);
+    expect(commentActions.loadComment(datas)).toEqual(expectedAction);
   })
   it('Actions should return type COMMENT_LOADING', () => {
 
-    expect(setCommentLoading()).toEqual({"type": "COMMENT_LOADING"});
+    expect(commentActions.setCommentLoading()).toEqual({"type": "COMMENT_LOADING"});
   })
 })
+
+describe('startLoadComment Actions', () => {
+  beforeEach(function () {
+    moxios.install();
+  });
+  afterEach(function () {
+    moxios.uninstall();
+  });
+  it('creates LOAD_COMMENT after successfuly fetching data', () => {
+    moxios.wait(() => {
+      const request = moxios.requests.mostRecent();
+      request.respondWith({
+        status: 200,
+        response: {comment: [], loading: false},
+      });
+    });
+    const expectedActions = [
+      {
+        type: types.COMMENT_LOADING
+      },
+      {
+        datas: {
+          comment: [], 
+          loading: false
+        }, 
+        type: types.LOAD_COMMENT
+      }
+    ];
+    const store = mockStore({ datas: {} })
+    return store.dispatch(commentActions.startLoadComment()).then(() => {
+      expect(store.getActions()).toEqual(expectedActions);
+    });
+  });
+});
 
 describe('<Comment /> Reducer', () => {
   it('Should return default state', () => {
@@ -450,7 +519,7 @@ describe('<Comment /> Reducer', () => {
       comment: undefined
     };
     const newState = commentReducer(undefined, {
-      type: LOAD_COMMENT,
+      type: types.LOAD_COMMENT,
       posts 
     });
     expect(newState).toEqual(posts); 
@@ -461,7 +530,7 @@ describe('<Comment /> Reducer', () => {
       comment: []
     };
     const newState = commentReducer(undefined, {
-      type: COMMENT_LOADING,
+      type: types.COMMENT_LOADING,
       posts 
     });
     expect(newState).toEqual(posts); 
@@ -472,12 +541,12 @@ describe('Category actions', () => {
   it('Actions should return same value if receiving type LOAD_CATEGORY', () => {
     let data = ['Technology', 'Sport', 'Business', 'Auto'];
     const expectedAction = {
-      type: LOAD_CATEGORY,
+      type: types.LOAD_CATEGORY,
       data
     }
-    expect(loadCategory(data)).toEqual(expectedAction);
-  })
-})
+    expect(categoryActions.loadCategory(data)).toEqual(expectedAction);
+  });
+});
 
 describe('Category Reducer', () => {
   it('Should return default state', () => {
@@ -487,24 +556,9 @@ describe('Category Reducer', () => {
   it('Should return new state if receiving type LOAD_CATEGORY', () => {
     const posts = [];
     const newState = categoryReducer(undefined, {
-      type: LOAD_CATEGORY,
+      type: types.LOAD_CATEGORY,
       posts 
     });
     expect(newState).toEqual(undefined); 
   });
 });
-
-// describe('Country Reducer', () => {
-//   it('Should return default state', () => {
-//     const newState = countryReducer(undefined, {});
-//     expect(newState).toEqual([]);
-//   });
-//   it('Should return new state if receiving type LOAD_RATES', () => {
-//     const posts = [];
-//     const newState = countryReducer(undefined, {
-//       type: LOAD_RATES,
-//       posts 
-//     });
-//     expect(newState).toEqual(undefined); 
-//   });
-// });
