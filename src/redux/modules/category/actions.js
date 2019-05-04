@@ -1,5 +1,5 @@
-import {database} from '../../database/config';
-import {LOAD_CATEGORY} from '../types';
+import {database} from '../../../models/config';
+import * as types from './types';
 
 export function startLoadingCat() {
     return (dispatch) => {
@@ -17,7 +17,7 @@ export function startLoadingCat() {
 
 export function loadCategory(data) {
     return {
-        type: LOAD_CATEGORY,
+        type: types.LOAD_CATEGORY,
         data
     }
 }

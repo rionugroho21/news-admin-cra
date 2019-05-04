@@ -1,0 +1,1 @@
+export const LOAD_CATEGORY = 'LOAD_CATEGORY';

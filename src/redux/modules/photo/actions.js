@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {PHOTO_LOADING, LOAD_PHOTO} from '../types';
+import * as types from './types';
 
 export const startLoadPhoto = (id) => dispatch => {
     dispatch(setPhotoLoading());
@@ -18,13 +18,13 @@ export const startLoadPhoto = (id) => dispatch => {
 
 export const loadPhoto = (datas) => {
     return {
-        type: LOAD_PHOTO,
+        type: types.LOAD_PHOTO,
         datas
     }
 }
 
 export const setPhotoLoading = () => {
     return {
-        type: PHOTO_LOADING
+        type: types.PHOTO_LOADING
     }
 }

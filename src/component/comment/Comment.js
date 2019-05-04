@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import {startLoadComment} from '../../redux/actions/commentActions';
+import {startLoadComment} from '../../redux/actions';
 import Loading from '../common/loading/LoadingDots';
 
 class Comment extends React.Component{

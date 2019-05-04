@@ -3,9 +3,9 @@ import DatePicker from "react-datepicker";
 import "../../../node_modules/react-datepicker/dist/react-datepicker.css";
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import {startEditingMember, startLoadingMember} from '../../redux/actions/memberActions';
+import {startEditingMember, startLoadingMember} from '../../redux/actions';
 import AutoCompleteInput from '../common/autocompleteinput/AutoCompleteInput';
-import countries from '../../database/countries';
+import countries from '../../models/countries';
 
 class MemberEdit extends React.Component{
     constructor(props){

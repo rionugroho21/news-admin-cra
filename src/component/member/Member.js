@@ -5,7 +5,7 @@ import {bindActionCreators} from 'redux';
 import {Link} from 'react-router-dom';
 import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css';
-import {startRemovingMember, startLoadingMember} from '../../redux/actions/memberActions';
+import {startRemovingMember, startLoadingMember} from '../../redux/actions';
 import LoadingItem from '../common/loading/LoadingItem';
 
 class Member extends React.Component{

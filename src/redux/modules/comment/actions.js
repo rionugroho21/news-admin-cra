@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {COMMENT_LOADING, LOAD_COMMENT} from '../types';
+import * as types from './types';
 
 export const startLoadComment = () => dispatch => {
     dispatch(setCommentLoading());
@@ -14,13 +14,13 @@ export const startLoadComment = () => dispatch => {
 
 export const loadComment = (datas) => {
     return {
-        type: LOAD_COMMENT,
+        type: types.LOAD_COMMENT,
         datas
     }
 }
 
 export const setCommentLoading = () => {
     return {
-        type: COMMENT_LOADING
+        type: types.COMMENT_LOADING
     }
 }

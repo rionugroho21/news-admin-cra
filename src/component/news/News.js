@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import NewsItem from './NewsItem';
-import {startLoadingNews} from '../../redux/actions/newsActions';
+import {startLoadingNews} from '../../redux/actions';
 import LoadingItem from '../common/loading/LoadingItem';
 
 class News extends Component{

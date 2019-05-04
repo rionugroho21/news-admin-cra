@@ -4,8 +4,8 @@ import { connect } from 'react-redux';
 import {bindActionCreators} from 'redux';
 import DatePicker from "react-datepicker";
 import "../../../node_modules/react-datepicker/dist/react-datepicker.css";
-import {startEditingNews, startLoadingNews} from '../../redux/actions/newsActions';
-import {startLoadingCat} from '../../redux/actions/categoryActions';
+import {startEditingNews, startLoadingNews} from '../../redux/actions';
+import {startLoadingCat} from '../../redux/actions';
 import Option from '../common/Option';
 
 class NewsEdit extends React.Component {

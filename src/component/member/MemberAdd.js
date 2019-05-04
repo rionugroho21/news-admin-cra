@@ -4,9 +4,9 @@ import { connect } from 'react-redux';
 import {bindActionCreators} from 'redux';
 import DatePicker from "react-datepicker";
 import "../../../node_modules/react-datepicker/dist/react-datepicker.css";
-import {startAddingMember} from '../../redux/actions/memberActions';
+import {startAddingMember} from '../../redux/actions';
 import AutoCompleteInput from '../common/autocompleteinput/AutoCompleteInput';
-import countries from '../../database/countries';
+import countries from '../../models/countries';
 
 class MemberAdd extends React.Component{
     constructor(props){

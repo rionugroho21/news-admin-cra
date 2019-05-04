@@ -1,5 +1,5 @@
-import {database} from '../../database/config';
-import {LOAD_MEMBER, ADD_MEMBER, EDIT_MEMBER, REMOVE_MEMBER} from '../types';
+import {database} from '../../../models/config';
+import * as types from './types';
 
 export function startLoadingMember() {
     return (dispatch) => {
@@ -51,28 +51,28 @@ export function startRemovingMember(index, id) {
 
 export function loadMember(datas) {
     return {
-        type: LOAD_MEMBER,
+        type: types.LOAD_MEMBER,
         datas
     }
 }
 
 export function addMember(post) {
     return {
-        type: ADD_MEMBER,
+        type: types.ADD_MEMBER,
         post
     }
 }
 
 export function editMember(post) {
     return {
-        type: EDIT_MEMBER,
+        type: types.EDIT_MEMBER,
         post
     }
 }
 
 export function removeMember(index) {
     return {
-        type: REMOVE_MEMBER,
+        type: types.REMOVE_MEMBER,
         index
     }
 }

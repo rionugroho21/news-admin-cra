@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import {Link} from 'react-router-dom';
 import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css';
-import {startRemovingNews} from '../../redux/actions/newsActions';
+import {startRemovingNews} from '../../redux/actions';
 import Popup from '../common/Popup';
 
 class NewsItem extends React.Component {

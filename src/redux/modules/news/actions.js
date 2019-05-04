@@ -1,5 +1,5 @@
-import {database} from '../../database/config';
-import {LOAD_NEWS, ADD_NEWS, EDIT_NEWS, REMOVE_NEWS} from '../types';
+import {database} from '../../../models/config';
+import * as types from './types';
 
 export function startLoadingNews() {
     return (dispatch) => {
@@ -51,28 +51,28 @@ export function startRemovingNews(index, id) {
 
 export function loadDatas(news) {
     return {
-        type: LOAD_NEWS,
+        type: types.LOAD_NEWS,
         news
     }
 }
 
 export function addPost(post) {
     return {
-        type: ADD_NEWS,
+        type: types.ADD_NEWS,
         post
     }
 }
 
 export function editPost(post) {
     return {
-        type: EDIT_NEWS,
+        type: types.EDIT_NEWS,
         post
     }
 }
 
 export function removePost(index) {
     return {
-        type: REMOVE_NEWS,
+        type: types.REMOVE_NEWS,
         index
     }
 }

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {LOAD_RATES} from '../types';
+import * as types from './types';
 
 export function startLoadingRates(){
     return (dispatch) => {
@@ -20,7 +20,7 @@ export function startLoadingRates(){
 
 export function loadRates(datas) {
     return {
-        type: LOAD_RATES,
+        type: types.LOAD_RATES,
         datas
     }
 }

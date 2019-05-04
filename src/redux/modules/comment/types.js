@@ -1,0 +1,2 @@
+export const COMMENT_LOADING = 'COMMENT_LOADING';
+export const LOAD_COMMENT = 'LOAD_COMMENT';

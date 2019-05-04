@@ -2,10 +2,10 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {startLoadingNews} from '../../redux/actions/newsActions';
-import {startLoadComment} from '../../redux/actions/commentActions';
-import {startLoadingMember} from '../../redux/actions/memberActions';
-import {startLoadPhoto} from '../../redux/actions/photoActions';
+import {startLoadingNews} from '../../redux/actions';
+import {startLoadComment} from '../../redux/actions';
+import {startLoadingMember} from '../../redux/actions';
+import {startLoadPhoto} from '../../redux/actions';
 import LoadingDash from '../common/loading/LoadingDash';
 
 class Dashboard extends Component{
