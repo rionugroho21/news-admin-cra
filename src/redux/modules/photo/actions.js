@@ -2,12 +2,15 @@ import * as types from './types';
 import { getPhoto } from '../../../models/photo';
 
 export const startLoadPhoto = (id) => dispatch => {
-    dispatch(setPhotoLoading());
+    dispatch({ type: types.PHOTO_LOADING });
 
     return new Promise((resolve, reject) => {
         getPhoto(id).then(result => {
             if(result.status === 200){
-                dispatch(loadPhoto(result.data));
+                dispatch({
+                    type: types.LOAD_PHOTO,
+                    payload: result.data
+                });
                 resolve(result);
             }else{
                 reject(result)
@@ -17,17 +20,4 @@ export const startLoadPhoto = (id) => dispatch => {
             reject(error);
         });
     });
-}
-
-export const loadPhoto = (datas) => {
-    return {
-        type: types.LOAD_PHOTO,
-        datas
-    }
-}
-
-export const setPhotoLoading = () => {
-    return {
-        type: types.PHOTO_LOADING
-    }
 }

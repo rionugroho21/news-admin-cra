@@ -5,25 +5,6 @@ const initialState = {
     loading: false
 }
 
-// function photo(state = initialState, action) {
-//     switch (action.type) {
-//         case PHOTO_LOADING: 
-//             return {
-//                 ...state,
-//                 loading: true
-//             }
-//         case LOAD_PHOTO: 
-//             return {
-//                 ...state,
-//                 photo: action.datas,
-//                 loading: false
-//             }
-//         default: return state;
-//     }
-// }
-
-// export default photo;
-
 const ACTION_HANDLERS = {
     [types.PHOTO_LOADING]: state => {
         return {
@@ -34,7 +15,7 @@ const ACTION_HANDLERS = {
     [types.LOAD_PHOTO]: (state, action) => {
         return {
             ...state,
-            photo: action.datas,
+            photo: action.payload,
             loading: false
         }
     }
