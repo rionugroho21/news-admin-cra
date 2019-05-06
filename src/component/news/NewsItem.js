@@ -129,7 +129,7 @@ NewsItem.propTypes = {
 
 const mapStateToProps = (state) => {
   return {
-    news: state.news
+    news: state.news.news
   };
 };
 

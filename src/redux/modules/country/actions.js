@@ -1,10 +1,9 @@
-import axios from 'axios';
 import * as types from './types';
+import { getCountry } from '../../../models/country';
 
 export function startLoadingRates(){
     return (dispatch) => {
-        return axios.get('http://country.io/names.json')
-        .then(res => {
+        getCountry().then(res => {
             const country = res.data;
             let rates = '';
             let list = [];

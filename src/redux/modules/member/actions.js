@@ -3,6 +3,7 @@ import * as types from './types';
 
 export function startLoadingMember() {
     return (dispatch) => {
+        dispatch(setMemberLoading());
         return database.ref('member').once('value').then((snapshot) => {
             let datas = [];
             snapshot.forEach((childSnapshot) => {
@@ -12,6 +13,12 @@ export function startLoadingMember() {
         }).catch((error) => {
             console.log(error);
         });
+    }
+}
+
+export const setMemberLoading = () => {
+    return {
+        type: types.MEMBER_LOADING
     }
 }
 

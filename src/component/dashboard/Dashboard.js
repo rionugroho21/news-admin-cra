@@ -12,9 +12,7 @@ class Dashboard extends Component{
     state = { loading: true }
 
     componentDidMount(){
-        this.props.startLoadingNews().then(() => {
-            this.setState({loading: false});
-        });
+        this.props.startLoadingNews()
         this.props.startLoadingMember();
         this.props.startLoadComment();
         this.props.startLoadPhoto(1);
@@ -94,8 +92,8 @@ Dashboard.propTypes = {
 }
 
 const mapStateToProps = state => ({
-    news: state.news,
-    member: state.member,
+    news: state.news.news,
+    member: state.member.member,
     comment: state.comment.comment,
     photo: state.photo
 })

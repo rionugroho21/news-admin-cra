@@ -1,25 +1,17 @@
-//import _datas from '../../data/datas';
 import * as types from './types';
 
-const _datas = [];
-
-// function news(state = _datas, action) {
-//     switch (action.type) {
-//         case REMOVE_NEWS: 
-//             return [
-//                 ...state.slice(0, action.index), 
-//                 ...state.slice(action.index + 1)
-//             ];
-//         case ADD_NEWS: return [...state, action.post];
-//         case LOAD_NEWS: return action.news;
-//         case EDIT_NEWS: return [...state, action.post];
-//         default: return state;
-//     }
-// }
-
-// export default news;
+const initialState = {
+    news: [],
+    loading: false
+}
 
 const ACTION_HANDLERS = {
+    [types.NEWS_LOADING]: state => {
+        return {
+            ...state,
+            loading: true
+        }
+    },
     [types.REMOVE_NEWS]: (state, action) => {
         return [
             ...state.slice(0, action.index), 
@@ -33,7 +25,11 @@ const ACTION_HANDLERS = {
         ]
     },
     [types.LOAD_NEWS]: (state, action) => {
-        return action.news
+        return {
+            ...state,
+            news: action.news,
+            loading: false
+        }
     },
     [types.EDIT_NEWS]: (state, action) => {
         return [
@@ -43,7 +39,7 @@ const ACTION_HANDLERS = {
     }
 }
 
-export default (state = _datas, action) => {
+export default (state = initialState, action) => {
     const handler = ACTION_HANDLERS[action.type];
 
     return handler ? handler(state, action) : state;

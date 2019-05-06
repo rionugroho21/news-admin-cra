@@ -1,7 +1,12 @@
 //import _datas from '../../data/datas';
 import * as types from './types';
 
-const _datas = [];
+//const _datas = [];
+
+const initialState = {
+    member: [],
+    loading: false
+}
 
 // function member(state = _datas, action) {
 //     switch (action.type) {
@@ -20,6 +25,12 @@ const _datas = [];
 // export default member;
 
 const ACTION_HANDLERS = {
+    [types.MEMBER_LOADING]: state => {
+        return {
+            ...state,
+            loading: true
+        }
+    },
     [types.REMOVE_MEMBER]: (state, action) => {
         return [
             ...state.slice(0, action.index), 
@@ -33,7 +44,11 @@ const ACTION_HANDLERS = {
         ]
     },
     [types.LOAD_MEMBER]: (state, action) => {
-        return action.datas
+        return {
+            ...state,
+            member: action.datas,
+            loading: false
+        }
     },
     [types.EDIT_MEMBER]: (state, action) => {
         return [
@@ -43,7 +58,7 @@ const ACTION_HANDLERS = {
     }
 }
 
-export default (state = _datas, action) => {
+export default (state = initialState, action) => {
     const handler = ACTION_HANDLERS[action.type];
 
     return handler ? handler(state, action) : state;

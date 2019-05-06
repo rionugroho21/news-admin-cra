@@ -6,17 +6,14 @@ import {startLoadingNews} from '../../redux/actions';
 import LoadingItem from '../common/loading/LoadingItem';
 
 class News extends Component{
-    state = { loading: true }
 
-    componentDidMount(){
-        this.props.startLoadingNews().then(() => {
-            this.setState({loading: false});
-        });
+    componentDidMount(){        
+        this.props.startLoadingNews();
     }
 
     render(){
-        const news = this.props.news;
-        if (this.state.loading === true) {
+        const { news, loading } = this.props.news;        
+        if (loading === true) {
             return <LoadingItem />
         }else if(news){
             return (
@@ -34,7 +31,7 @@ class News extends Component{
 }
 
 News.propTypes = {
-    news: PropTypes.array.isRequired,
+    news: PropTypes.object.isRequired,
     startLoadingNews: PropTypes.func.isRequired
 }
 

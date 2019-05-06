@@ -1,17 +1,22 @@
 import {database} from '../../../models/config';
 import * as types from './types';
 
-export function startLoadingNews() {
-    return (dispatch) => {
-        return database.ref('datas').once('value').then((snapshot) => {
-            let news = [];
-            snapshot.forEach((childSnapshot) => {
-                news.push(childSnapshot.val());
-            });
-            dispatch(loadDatas(news));
-        }).catch((error) => {
-            console.log(error);
+export const startLoadingNews = () => dispatch => {        
+    dispatch(setNewsLoading());
+    database.ref('datas').once('value').then((snapshot) => {
+        let news = [];
+        snapshot.forEach((childSnapshot) => {
+            news.push(childSnapshot.val());
         });
+        dispatch(loadDatas(news));
+    }).catch((error) => {
+        console.log(error);
+    });
+}
+
+export const setNewsLoading = () => {
+    return {
+        type: types.NEWS_LOADING
     }
 }
 

@@ -1,10 +1,9 @@
-import axios from 'axios';
 import * as types from './types';
+import { getComment } from '../../../models/comment';
 
 export const startLoadComment = () => dispatch => {
     dispatch(setCommentLoading());
-    return axios.get('https://jsonplaceholder.typicode.com/comments')
-    .then(res => {
+    getComment().then(res => {
         let datas = res.data;
         dispatch(loadComment(datas));
     }).catch((error) => {

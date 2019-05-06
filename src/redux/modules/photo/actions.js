@@ -1,14 +1,9 @@
-import axios from 'axios';
 import * as types from './types';
+import { getPhoto } from '../../../models/photo';
 
 export const startLoadPhoto = (id) => dispatch => {
     dispatch(setPhotoLoading());
-    return axios.get('https://jsonplaceholder.typicode.com/photos', {
-        params: {
-            albumId: id
-        }
-    })
-    .then(res => {
+    getPhoto(id).then(res => {
         let datas = res.data;
         dispatch(loadPhoto(datas));
     }).catch((error) => {
