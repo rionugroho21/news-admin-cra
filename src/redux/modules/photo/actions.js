@@ -3,11 +3,19 @@ import { getPhoto } from '../../../models/photo';
 
 export const startLoadPhoto = (id) => dispatch => {
     dispatch(setPhotoLoading());
-    getPhoto(id).then(res => {
-        let datas = res.data;
-        dispatch(loadPhoto(datas));
-    }).catch((error) => {
-        console.log(error);
+
+    return new Promise((resolve, reject) => {
+        getPhoto(id).then(result => {
+            if(result.status === 200){
+                dispatch(loadPhoto(result.data));
+                resolve(result);
+            }else{
+                reject(result)
+            }            
+        }).catch((error) => {
+            console.log(error);
+            reject(error);
+        });
     });
 }
 

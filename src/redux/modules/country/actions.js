@@ -3,16 +3,23 @@ import { getCountry } from '../../../models/country';
 
 export function startLoadingRates(){
     return (dispatch) => {
-        getCountry().then(res => {
-            const country = res.data;
-            let rates = '';
-            let list = [];
-            for(rates in country.rates) {
-                list = list.concat(rates);
-            }
-            dispatch(loadRates(list));
-        }).catch((error) => {
-            console.log(error);
+        return new Promise((resolve, reject) => {
+            getCountry().then(result => {
+                if(result.status === 200){
+                    const country = result.data;
+                    let rates = '';
+                    let list = [];
+                    for(rates in country.rates) {
+                        list = list.concat(rates);
+                    }
+                    dispatch(loadRates(list));
+                    resolve(result);
+                }else{
+                    reject(result)
+                }
+            }).catch((error) => {
+                console.log(error);
+            });
         });
     }
 }

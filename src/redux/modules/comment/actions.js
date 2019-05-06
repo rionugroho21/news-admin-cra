@@ -3,12 +3,20 @@ import { getComment } from '../../../models/comment';
 
 export const startLoadComment = () => dispatch => {
     dispatch(setCommentLoading());
-    getComment().then(res => {
-        let datas = res.data;
-        dispatch(loadComment(datas));
-    }).catch((error) => {
-        console.log(error);
-    });
+
+    return new Promise((resolve, reject) => {
+        getComment().then(result => {
+            if(result.status === 200){
+                dispatch(loadComment(result.data));
+                resolve(result);
+            }else{
+                reject(result)
+            }            
+        }).catch((error) => {
+            console.log(error);
+            reject(error);
+        });
+    })
 }
 
 export const loadComment = (datas) => {
